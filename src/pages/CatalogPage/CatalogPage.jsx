@@ -36,7 +36,7 @@ const CatalogPage = () => {
 										<p>В наличии</p>
 									</div>
 									<img className="catalog-img" src={elem.image} alt="" />
-									<h3>{elem.name}</h3>
+									<h3 onClick={() => navigate(`/details/${elem.id}`)}>{elem.name}</h3>
 									<div className="price-btn">
 										<p>{elem.price} ₽</p>
 										<div className="price-btn">

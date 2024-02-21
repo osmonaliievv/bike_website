@@ -1,26 +1,15 @@
 {
   "products": [
     {
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeydXHiYTforpxdFrB-Y1PLw7GehsLwDKDjQ&usqp=CAU",
-      "name": "Quantor Urkraft E-Bike - Pinion",
-      "price": "23 776",
-      "color": "black",
-      "brand": "mellas",
-      "frame": "сталь",
-      "size": "L",
-      "country": "KG",
-      "id": 4
-    },
-    {
-      "image": "https://www.prioritybicycles.com/cdn/shop/products/L-Train-Grey-1_1200x.jpg?v=1708061515",
-      "name": "BRILLIANT L TRAIN – Priority Bicycles",
-      "price": 23000,
-      "color": "white",
-      "brand": "brilliant",
-      "frame": "сталь",
-      "size": "L",
-      "country": "KG",
-      "id": 5
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": 222,
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 1
     }
   ],
   "categories": []

@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './DetailsPage.scss';
 import '../../styles/common.scss';
 import img_main from '../../img/imgMainPhoto/image 68.png';
-import img_smole_one from '../../img/imgMainPhoto/image 69 malenke slide img1.png';
-import img_smole_two from '../../img/imgMainPhoto/image 70 smole img bake two.png';
 import img_heart from '../../img/imgMainPhoto/Heart_icon_red_hollow.svg.png';
-import Swiper from '../../components/Swiper';
-// import { Swiper } from "swiper/react";
+import { useParams } from 'react-router-dom';
+import { useDetail } from '../../context/DetailContextProvider';
 
-const DetailsPage = () => {
+export default function DetailsPage() {
+	const { getProductById, productById } = useDetail();
+	const { id } = useParams();
+	useEffect(() => {
+		getProductById(id);
+	}, [id]);
+	console.log('productById');
 	return (
 		<main className="details">
 			<div className="details__container">
@@ -84,6 +88,4 @@ const DetailsPage = () => {
 			</div>
 		</main>
 	);
-};
-
-export default DetailsPage;
+}
