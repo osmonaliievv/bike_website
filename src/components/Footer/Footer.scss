@@ -1,1 +1,55 @@
-@import '../../styles/style.scss';
+@import "../../styles/style.scss";
+.footer {
+  background: #000;
+}
+.footer-menu {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+.f-m-katalog {
+  display: flex;
+  flex-direction: column-reverse;
+  color: white;
+}
+.f-m-klient {
+  color: white;
+}
+.foot {
+  color: white;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.footer-icons {
+  display: flex;
+}
+.blocks {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.block__item {
+  padding: 10px;
+  display: flex;
+}
+.block {
+  font-size: 20px;
+  font-weight: 800;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
