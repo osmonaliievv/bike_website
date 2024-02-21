@@ -1,17 +1,6 @@
 {
   "products": [
     {
-      "image": "https://www.reidcycles.com.au/cdn/shop/products/reid-cycles-australia-express-road-bike-gunmetal-grey-s-333.jpg?v=1627437366&width=1946",
-      "name": "Express Road Bike | Road Bikes Online - Reid Cycles",
-      "price": "25 123",
-      "color": "black",
-      "brand": "reid",
-      "frame": "сталь",
-      "size": "L",
-      "country": "KG",
-      "id": 1
-    },
-    {
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeydXHiYTforpxdFrB-Y1PLw7GehsLwDKDjQ&usqp=CAU",
       "name": "Quantor Urkraft E-Bike - Pinion",
       "price": "23 776",
