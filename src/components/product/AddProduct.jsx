@@ -13,6 +13,7 @@ const AddProduct = () => {
     frame: "",
     size: "",
     country: "",
+    descr: "",
   });
 
   const handleInput = (e) => {
@@ -90,6 +91,13 @@ const AddProduct = () => {
         type="text"
         name="country"
         placeholder="Country"
+      />
+      <input
+        className="Addproduct-input"
+        onChange={handleInput}
+        type="text"
+        name="descr"
+        placeholder="Description"
       />
       <button onClick={handleClick}>Add</button>
     </main>

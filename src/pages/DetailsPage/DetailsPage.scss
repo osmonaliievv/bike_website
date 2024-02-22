@@ -11,7 +11,9 @@
 
   &__imgmain {
     img {
-      max-width: 100%;
+      // max-width: 100%;
+      width: 600px;
+      height: 400px;
     }
   }
 }
@@ -210,7 +212,7 @@
     margin-top: 48px;
   }
 }
-.block {
+.blockk {
   display: flex;
   justify-content: space-between;
   align-items: center;
