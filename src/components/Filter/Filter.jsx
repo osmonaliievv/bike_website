@@ -118,12 +118,7 @@ const Filter = ({
           type="range"
           onChange={handleRangeChangeMin}
         />
-        <input
-          min={0}
-          max={10000000}
-          type="range"
-          onChange={handleRangeChange}
-        />
+        <input min={0} max={1000} type="range" onChange={handleRangeChange} />
       </div>
 
       <div className="filter__input-price">
