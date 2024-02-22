@@ -19,10 +19,13 @@ const PaymentForm = () => {
       />
       <form>
         <input
+          className="inp-1"
           type="tel"
           name="number"
           value={number}
           placeholder="Enter Number"
+          maxlength="16"
+          required
           onChange={(e) => setNumber(e.target.value)}
           onFocus={(e) => setFocused(e.target.name)}
         />
@@ -31,7 +34,9 @@ const PaymentForm = () => {
           name="name"
           value={name}
           placeholder="Enter Name"
-          onChange={(e) => setName(e.target.value)}
+          maxlength="18"
+          required
+          onChange={(e) => setName(e.target.value.toUpperCase())}
           onFocus={(e) => setFocused(e.target.name)}
         />
         <input
@@ -39,6 +44,8 @@ const PaymentForm = () => {
           name="expiry"
           value={expiry}
           placeholder="Enter Expiry date"
+          maxlength="4"
+          required
           onChange={(e) => setExpiry(e.target.value)}
           onFocus={(e) => setFocused(e.target.name)}
         />
@@ -46,10 +53,13 @@ const PaymentForm = () => {
           type="tel"
           name="cvc"
           value={cvc}
-          placeholder="Enter Cvc"
+          placeholder="Enter CVC"
+          maxlength="3"
+          required
           onChange={(e) => setCvc(e.target.value)}
           onFocus={(e) => setFocused(e.target.name)}
         />
+        <button className="payment__btn-dark">Confirm</button>
       </form>
     </div>
   );
