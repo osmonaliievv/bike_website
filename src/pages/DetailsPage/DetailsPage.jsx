@@ -19,29 +19,20 @@ export default function DetailsPage() {
         <div className="details__top">
           <div>
             <div className="details__imgmain">
-              <img src={img_main} alt="" />
+              <img src={productById.image} alt="" />
             </div>
           </div>
           <div className="details__block2 ">
             <div className="details__997 ">
-              Look 977 BLACK FLUO YELLOW GREEN XT <br />
-              2x11S AMC 2018
+              {productById.name}
               <p className="details__vnalichii">В наличии</p>
             </div>
-            <p className="details__price">435 000 ₽</p>
-            <div className="details__descr">
-              Профессиональный гоночный хардтейл для кросс-кантри уровня
-              Чемпионата и Кубка Мира. Одна из самых легких рам среди гоночных
-              хардтейлов для кросс-канри.
-            </div>
+            <p className="details__price">{productById.price}</p>
+            <div className="details__descr">{productById.descr}</div>
             <div className="details__size">
               <p>Размер:</p>
               <div className="details__sizess">
-                <button className="details__sizes1">S</button>
-                <button className="details__sizes1">ML</button>
-                <button className="details__sizes1">M</button>
-                <button className="details__sizes1">L</button>
-                <button className="details__sizes1">XL</button>
+                <button className="details__sizes1">{productById.size}</button>
               </div>
             </div>
             <div className="details__current">
@@ -58,19 +49,12 @@ export default function DetailsPage() {
         <div className="details__block3">
           <div className="details__title">
             <p className="details__name">Описание</p>
-            <p className="details__name-descr">
-              Профессиональный гоночный хардтейл для кросс-кантри уровня
-              Чемпионата и Кубка Мира. Одна из самых лёгких рам среди гоночных
-              хардтейлов для кросс-кантри. Scott Scale 700 RC — это рама
-              из композитного волокна HMX, гоночная трансмиссия Sram XX1/X01
-              1×11, дисковые тормоза Shimano XTR M9000 и гоночные колеса Syncros
-              XR RC. Байк Нино Шуртера для шорт-трек кросс-кантри.
-            </p>
+            <p className="details__name-descr">{productById.descr}</p>
           </div>
         </div>
         <div className="details__block4">
           <div className="details__title2">Характеристика</div>
-          <div className="block">
+          <div className="blockk">
             <ul className="block__list">
               <li className="block__item">Цвет</li>
               <li className="block__item">Бренд</li>
@@ -79,11 +63,11 @@ export default function DetailsPage() {
               <li className="block__item">Страна</li>
             </ul>
             <ul className="block__list">
-              <li className="block__item2">Желтый</li>
-              <li className="block__item2">Scott</li>
-              <li className="block__item2">Карбон</li>
-              <li className="block__item2">L</li>
-              <li className="block__item2">Кыргызстан</li>
+              <li className="block__item2">{productById.color}</li>
+              <li className="block__item2">{productById.brand}</li>
+              <li className="block__item2">{productById.frame}</li>
+              <li className="block__item2">{productById.size}</li>
+              <li className="block__item2">{productById.country}</li>
             </ul>
           </div>
         </div>

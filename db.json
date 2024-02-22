@@ -4,11 +4,12 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
       "name": "вело",
       "price": 222,
-      "color": "выа",
-      "brand": "ыва",
-      "frame": "чсм",
-      "size": "12",
-      "country": "чсм",
+      "color": "Black",
+      "brand": "Scott",
+      "frame": "Steel",
+      "size": "L",
+      "country": "KG",
+      "descr": "Профессиональный гоночный хардтейл для кросс-кантри уровня Чемпионата и Кубка Мира. Одна из самых легких рам среди гоночных хардтейлов для кросс-канри.",
       "id": 1
     }
   ],
