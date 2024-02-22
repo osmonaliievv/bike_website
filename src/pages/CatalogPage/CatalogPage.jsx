@@ -35,11 +35,10 @@ const CatalogPage = () => {
                     <img src={flag} alt="" />
                     <p>В наличии</p>
                   </div>
-                  <Link to={`/details/${elem.id}`}>
-                    <img className="catalog-img" src={elem.image} />
-                  </Link>
-
-                  <h3>{elem.name}</h3>
+                  <img className="catalog-img" src={elem.image} alt="" />
+                  <h3 onClick={() => navigate(`/details/${elem.id}`)}>
+                    {elem.name}
+                  </h3>
                   <div className="price-btn">
                     <p>{elem.price} ₽</p>
                     <div className="price-btn">
@@ -77,7 +76,6 @@ const CatalogPage = () => {
                       </button>
                     </div>
                   </div>
-
                   <button className="cart-btn">
                     <svg
                       width="18"

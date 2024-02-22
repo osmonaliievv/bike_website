@@ -4,15 +4,15 @@ import "../../styles/common.scss";
 import img_main from "../../img/imgMainPhoto/image 68.png";
 import img_heart from "../../img/imgMainPhoto/Heart_icon_red_hollow.svg.png";
 import { useParams } from "react-router-dom";
-import { useProduct } from "../../context/ProductContextProvider";
+import { useDetail } from "../../context/DetailContextProvider";
 
-const DetailsPage = () => {
-  const { oneProduct, getOneProduct } = useProduct();
+export default function DetailsPage() {
+  const { getProductById, productById } = useDetail();
   const { id } = useParams();
   useEffect(() => {
-    getOneProduct(id);
-  }, []);
-  console.log(oneProduct);
+    getProductById(id);
+  }, [id]);
+  console.log("productById");
   return (
     <main className="details">
       <div className="details__container">
@@ -28,7 +28,7 @@ const DetailsPage = () => {
               2x11S AMC 2018
               <p className="details__vnalichii">В наличии</p>
             </div>
-            <p className="details__price">435 000 $</p>
+            <p className="details__price">435 000 ₽</p>
             <div className="details__descr">
               Профессиональный гоночный хардтейл для кросс-кантри уровня
               Чемпионата и Кубка Мира. Одна из самых легких рам среди гоночных
@@ -90,6 +90,4 @@ const DetailsPage = () => {
       </div>
     </main>
   );
-};
-
-export default DetailsPage;
+}
