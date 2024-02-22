@@ -9,6 +9,7 @@ const INIT_STATE = {
   products: [],
   oneProduct: {},
   categories: [],
+  loading: false,
 };
 export default function ProductContextProvider({ children }) {
   const navigate = useNavigate();
@@ -20,6 +21,8 @@ export default function ProductContextProvider({ children }) {
         return { ...state, oneProduct: action.payload };
       case ACTIONS.GET_CATEGORIES:
         return { ...state, categories: action.payload };
+      case ACTIONS.CHANGE_LOADING:
+        return { ...state, loading: action.payload };
       default:
         return state;
     }
@@ -37,6 +40,10 @@ export default function ProductContextProvider({ children }) {
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
       payload: data,
+    });
+    dispatch({
+      type: ACTIONS.CHANGE_LOADING,
+      payload: true,
     });
   };
   const deleteProduct = async (id) => {
@@ -86,6 +93,7 @@ export default function ProductContextProvider({ children }) {
     products: state.products,
     oneProduct: state.oneProduct,
     categories: state.categories,
+    loading: state.loading,
     getProducts,
     addProduct,
     deleteProduct,
