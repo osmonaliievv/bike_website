@@ -9,14 +9,39 @@ import Pagination from '../../components/Pagination';
 
 const CatalogPage = () => {
 	const { products, getProducts, deleteProduct, getOneProduct, loading } = useProduct();
-	const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 	const displayedProducts = 6;
 	const navigate = useNavigate();
-	const [openEditModal, setOpenEditModal] = useState(false);
-	useEffect(() => {
-		getProducts();
-	}, []);
+  const [openEditModal, setOpenEditModal] = useState(false);
+  useEffect(() => {
+    getProducts();
+  }, []);
+  // ! Филтр по ценам
+  const [maxPriceValue, setMaxPriceValue] = useState(0);
+  const [minPriceValue, setMinPriceValue] = useState(0);
+  const prices = products.map((product) => product.price);
 
+  const result = products.filter((elem) => {
+    return elem.price >= minPriceValue && elem.price <= maxPriceValue;
+  });
+  useEffect(() => {
+    function findMaxPrice(prices) {
+      const maxPrice = Math.max(...prices);
+      setMaxPriceValue(maxPrice);
+    }
+
+    findMaxPrice(prices);
+  }, [products]);
+
+  useEffect(() => {
+    function findMinPrice(prices) {
+      const minPrice = Math.min(...prices);
+      setMinPriceValue(minPrice);
+    }
+
+    findMinPrice(prices);
+  }, [products]);
+  
 	//! PAGINATION
 
 	const toIndex = currentPage * displayedProducts;
@@ -33,11 +58,16 @@ const CatalogPage = () => {
 				</div>
 				<div className="catalog__container catalog__container_top">
 					<div className="catalog__filter">
-						<Filter />
+					 <Filter
+              maxPriceValue={maxPriceValue}
+              setMaxPriceValue={setMaxPriceValue}
+              minPriceValue={minPriceValue}
+              setMinPriceValue={setMinPriceValue}
+            />
 					</div>
 					<div className="catalog__products">
 						{loading ? (
-							displayedProductsCount.map((elem) => (
+							result.map((elem) => (
 								<div className="catalog__cards" key={elem.id}>
 									<div className="catalog-card">
 										<img className="catalog-img" src={elem.image} alt="" />
