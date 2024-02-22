@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useProduct } from "../../context/ProductContextProvider";
-import "./Products.css";
+import React, { useState } from 'react';
+import { useProduct } from '../../context/ProductContextProvider';
+import './Products.css';
 
 const AddProduct = () => {
   const { addProduct } = useProduct();

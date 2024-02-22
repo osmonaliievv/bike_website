@@ -11,6 +11,116 @@
       "country": "KG",
       "descr": "Профессиональный гоночный хардтейл для кросс-кантри уровня Чемпионата и Кубка Мира. Одна из самых легких рам среди гоночных хардтейлов для кросс-канри.",
       "id": 1
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": 222,
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 2
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": 222,
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 3
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": "2222323",
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 4
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": 222,
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 5
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": 222,
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 6
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": 222,
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 7
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": 222,
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 8
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": 222,
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 9
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": "222234234324",
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 10
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7p9ZhpmsPVQqHS4_m96cCcedRH2N2VQyaxQ&usqp=CAU",
+      "name": "вело",
+      "price": 222,
+      "color": "выа",
+      "brand": "ыва",
+      "frame": "чсм",
+      "size": "12",
+      "country": "чсм",
+      "id": 11
     }
   ],
   "categories": []
