@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useProduct } from "../../context/ProductContextProvider";
-import "./Products.css";
+import React, { useState } from 'react';
+import { useProduct } from '../../context/ProductContextProvider';
+import './Products.css';
 
 const AddProduct = () => {
   const { addProduct, categories, getCategories } = useProduct();
@@ -14,6 +14,7 @@ const AddProduct = () => {
     size: "",
     country: "",
     category: "",
+    descr: "",
   });
   useEffect(() => {
     getCategories();
@@ -100,6 +101,13 @@ const AddProduct = () => {
         type="text"
         name="country"
         placeholder="Country"
+      />
+      <input
+        className="Addproduct-input"
+        onChange={handleInput}
+        type="text"
+        name="descr"
+        placeholder="Description"
       />
       <button onClick={handleClick}>Add</button>
     </main>
