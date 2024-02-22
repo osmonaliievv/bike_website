@@ -35,7 +35,10 @@ const CatalogPage = () => {
                     <img src={flag} alt="" />
                     <p>В наличии</p>
                   </div>
-                  <img className="catalog-img" src={elem.image} alt="" />
+                  <Link to={`/details/${elem.id}`}>
+                    <img className="catalog-img" src={elem.image} />
+                  </Link>
+
                   <h3>{elem.name}</h3>
                   <div className="price-btn">
                     <p>{elem.price} ₽</p>
