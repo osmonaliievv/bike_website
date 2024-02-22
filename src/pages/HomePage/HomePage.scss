@@ -2,18 +2,53 @@
 
 .top-description {
 	background: url('../../img/mainPage/main-bg.png') center / cover no-repeat;
+	color: #fff;
+	padding: 30px 0 130px 0;
+	&__text {
+		max-width: toRem(600);
+		@include adaptiveValue('padding-right', 85, 50);
+		@include adaptiveValue('padding-left', 85, 50);
+		@media (max-width: em(425)) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	&__title {
+		@include adaptiveValue('font-size', 110, 50);
+		margin-bottom: toRem(38);
+		line-height: 93%;
+	}
+
+	&__sub-title {
+		font-size: toRem(18);
+		font-weight: 300;
+		line-height: 160%;
+		margin-bottom: toRem(40);
+	}
+
+	&__button {
+		padding: toRem(16) toRem(45);
+		background-color: #f57520;
+		border-radius: toRem(10);
+		transition: background-color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #f2a02c;
+			}
+		}
+	}
 }
 //========================================================================================================================================================
 
 .variants {
 	background-color: #000000;
-
 	&__container {
 	}
 
 	&__list {
 		display: grid;
-		row-gap: toRem(10);
+		gap: toRem(10);
 		grid-template-columns: repeat(auto-fit, minmax(toRem(320), 1fr));
 	}
 
@@ -74,14 +109,8 @@
 
 	&__row {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(toRem(280), 1fr));
-		gap: toRem(40);
-	}
-
-	&__column {
-		height: toRem(400);
-		border-radius: toRem(10);
-		background-color: #a9a0a0;
+		grid-template-columns: repeat(auto-fill, minmax(toRem(280), 1fr));
+		gap: toRem(20);
 	}
 }
 //========================================================================================================================================================
