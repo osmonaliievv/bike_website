@@ -7,7 +7,7 @@
 // import AdminPage from "../pages/AdminPage/AdminPage";
 // import EditPage from "../pages/EditPage/EditPage";
 // import CartPage from "../pages/CartPage/CartPage";
-// import PaymentForm from "../components/Payment/PaymentForm";
+import PaymentForm from "../components/Payment/PaymentForm";
 
 // export const PUBLIC_ROUTES = [
 //   { id: 1, path: "/", element: <HomePage /> },
@@ -89,6 +89,7 @@ export const PUBLIC_ROUTES = [
     path: "*",
     element: <NotFoundPage />,
   },
+  { id: 8, path: "/payment", element: <PaymentForm /> },
 ];
 
 export default function MainRoutes() {
