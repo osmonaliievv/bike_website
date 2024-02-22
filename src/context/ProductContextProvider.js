@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
-import { ACTIONS, API } from "../helpers/const";
+import { ACTIONS, API, API_CATEGORIES } from "../helpers/const";
 import axios from "axios";
 
 const productContext = createContext();
@@ -8,6 +8,7 @@ export const useProduct = () => useContext(productContext);
 const INIT_STATE = {
   products: [],
   oneProduct: {},
+  categories: [],
 };
 export default function ProductContextProvider({ children }) {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function ProductContextProvider({ children }) {
   // !GET
   const getProducts = async () => {
     const { data } = await axios(`${API}${window.location.search}`);
-    console.log(data);
+    // console.log(data);
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
       payload: data,
@@ -56,14 +57,43 @@ export default function ProductContextProvider({ children }) {
     navigate("/catalog");
     getProducts();
   };
+  // ! GET_CATIGORIES
+  const getCategories = async () => {
+    const { data } = await axios(API_CATEGORIES);
+    dispatch({
+      type: ACTIONS.GET_CATEGORIES,
+      payload: data,
+    });
+  };
+  // ! CREATE_CATEGORY
+  const createCategory = async (newCategory) => {
+    await axios.post(API_CATEGORIES, newCategory);
+    getCategories();
+  };
+  // ! FILTER
+  const fetchByParams = (query, value) => {
+    const search = new URLSearchParams(window.location.search);
+    if (value === "all") {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+    const url = `${window.location.pathname}?${search}`;
+    navigate(url);
+    getProducts();
+  };
   const values = {
     products: state.products,
     oneProduct: state.oneProduct,
+    categories: state.categories,
     getProducts,
     addProduct,
     deleteProduct,
     getOneProduct,
     editProduct,
+    getCategories,
+    fetchByParams,
+    createCategory,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>

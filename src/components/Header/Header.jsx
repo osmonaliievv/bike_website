@@ -26,7 +26,10 @@ export default function Header() {
   };
 
   const toggleSidebar = () => {
-    setSidebarVisible(!sidebarVisible);
+    setSidebarVisible(true);
+  };
+  const toggleSidebarClose = () => {
+    setSidebarVisible(false);
   };
 
   return (
@@ -61,7 +64,10 @@ export default function Header() {
             <img src={burger_menu} alt="menu" />
           </div>
         )}
-        <div className={`sidebar ${sidebarVisible ? "open" : ""}`}>
+        <div
+          onClick={toggleSidebarClose}
+          className={`sidebar ${sidebarVisible ? "open" : ""}`}
+        >
           <ul className="sidebar-menu">
             <li className="sidebar-item">Главная</li>
             <li className="sidebar-item">Товары</li>
