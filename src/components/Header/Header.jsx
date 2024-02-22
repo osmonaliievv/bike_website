@@ -33,7 +33,7 @@ export default function Header() {
               <NavLink to={"/catalog"}>Каталог</NavLink>
             </li>
             <li className="menu-header__item">
-              <NavLink to={"/catalog"}>Каталог</NavLink>
+              <NavLink to={"/catalog"}>Каталогг</NavLink>
             </li>
           </ul>
         </div>
