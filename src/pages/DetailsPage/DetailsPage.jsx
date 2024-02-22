@@ -28,7 +28,6 @@ export default function DetailsPage() {
               <p className="details__vnalichii">В наличии</p>
             </div>
             <p className="details__price">{productById.price}</p>
-            <div className="details__descr">{productById.descr}</div>
             <div className="details__size">
               <p>Размер:</p>
               <div className="details__sizess">
