@@ -7,7 +7,6 @@
 // import AdminPage from "../pages/AdminPage/AdminPage";
 // import EditPage from "../pages/EditPage/EditPage";
 // import CartPage from "../pages/CartPage/CartPage";
-import PaymentForm from "../components/Payment/PaymentForm";
 
 // export const PUBLIC_ROUTES = [
 //   { id: 1, path: "/", element: <HomePage /> },
@@ -20,7 +19,7 @@ import PaymentForm from "../components/Payment/PaymentForm";
 // =======
 import React from "react";
 import HomePage from "../pages/HomePage/HomePage";
-import { Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes } from "react-router-dom";
 import CatalogPage from "../pages/CatalogPage/CatalogPage";
 import AdminPage from "../pages/AdminPage/AdminPage";
 import CartPage from "../pages/CartPage/CartPage";
@@ -28,6 +27,11 @@ import EditPage from "../pages/EditPage/EditPage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import Layout from "../components/Layout";
+import PaymentForm from "../components/Payment/PaymentForm";
+import Login from "../components/Auth/Login";
+import Auth from "../components/Auth/Auth";
+import { useAuthContext } from "../context/AuthContextProvider";
+import { ADMIN } from "../helpers/const";
 import Like from "../pages/CartPage/Like";
 
 export const PUBLIC_ROUTES = [
@@ -51,15 +55,6 @@ export const PUBLIC_ROUTES = [
   },
   {
     id: 3,
-    path: "/admin",
-    element: (
-      <Layout>
-        <AdminPage />
-      </Layout>
-    ),
-  },
-  {
-    id: 4,
     path: "/edit",
     element: (
       <Layout>
@@ -68,7 +63,7 @@ export const PUBLIC_ROUTES = [
     ),
   },
   {
-    id: 5,
+    id: 4,
     path: "/details/:id",
     element: (
       <Layout>
@@ -77,7 +72,7 @@ export const PUBLIC_ROUTES = [
     ),
   },
   {
-    id: 6,
+    id: 5,
     path: "/cart",
     element: (
       <Layout>
@@ -85,22 +80,58 @@ export const PUBLIC_ROUTES = [
       </Layout>
     ),
   },
+
+  { id: 6, path: "/payment", element: <PaymentForm /> },
   {
     id: 7,
+    path: "/login",
+    element: (
+      <Layout>
+        <Login />
+      </Layout>
+    ),
+  },
+  {
+    id: 8,
+    path: "/auth",
+    element: (
+      <Layout>
+        <Auth />
+      </Layout>
+    ),
+  },
+  {
+    id: 9,
     path: "*",
     element: <NotFoundPage />,
   },
-  { id: 8, path: "/payment", element: <PaymentForm /> },
-  { id: 9, path: "/favourites", element: <Like /> },
+      { id: 10, path: "/payment", element: <PaymentForm /> },
+  { id: 11, path: "/favourites", element: <Like /> },
+];
+const PRIVATE_ROUTES = [
+  { id: 12, path: "/admin", element: <AdminPage /> },
+  { id: 13, path: "/edit/:id", element: <EditPage /> },
 ];
 
 export default function MainRoutes() {
+  const { user } = useAuthContext();
   return (
     <>
       <Routes>
         {PUBLIC_ROUTES.map((route) => (
           <Route key={route.id} path={route.path} element={route.element} />
         ))}
+        {user
+          ? PRIVATE_ROUTES.map((elem) => (
+              <Route
+                key={elem.id}
+                path={elem.path}
+                element={
+                  user.email === ADMIN ? elem.element : <NavLink to="*" />
+                }
+              />
+            ))
+          : null}
       </Routes>
     </>
   );
