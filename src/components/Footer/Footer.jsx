@@ -16,8 +16,8 @@ export default function Footer() {
           </NavLink>
         </div>
         <div className="footer__menu">
+          <p className="footer-menu">Контакты</p>
           <ul className="menu-footer-list">
-            <li className="footer-menu">Контакты</li>
             <li className="footer-mine-menu">
               <img src={phone} alt="phone" />
               +7(495)055-75-86 +7(965)142-22-99
