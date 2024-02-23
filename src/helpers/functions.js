@@ -18,3 +18,8 @@ export const getProductsCountInCart = () => {
 export const calcSubPrice = (elem) => {
   return elem.item.price * elem.count;
 };
+
+export const getLocalStorageFavorites = () => {
+  const like = JSON.parse(localStorage.getItem("like"));
+  return like;
+};

@@ -120,7 +120,7 @@ const Filter = ({
         />
         <input
           min={0}
-          max={100000000}
+          max={10000000}
           type="range"
           onChange={handleRangeChange}
         />

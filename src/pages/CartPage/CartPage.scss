@@ -123,10 +123,10 @@
     padding: 0 10px;
   }
 }
-
 .cart {
   // .cart__btn-caunt
 
+  color: orange;
   &__btn-caunt {
     display: flex;
     justify-content: space-around;
@@ -365,4 +365,18 @@
   .cart__title {
     margin-bottom: 30px;
   }
+}
+
+// ! like css
+.list-like {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.price-btnn img {
+  width: 80px;
 }
