@@ -3,11 +3,16 @@ import "./DetailsPage.scss";
 import "../../styles/common.scss";
 import img_main from "../../img/imgMainPhoto/image 68.png";
 import img_heart from "../../img/imgMainPhoto/Heart_icon_red_hollow.svg.png";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useDetail } from "../../context/DetailContextProvider";
+import { useCart } from "../../context/CartContextProvider";
 
 export default function DetailsPage() {
   const { getProductById, productById } = useDetail();
+  const { addProductToCart, getCart } = useCart();
+  useEffect(() => {
+    getCart();
+  }, []);
   const { id } = useParams();
   useEffect(() => {
     getProductById(id);
@@ -16,6 +21,11 @@ export default function DetailsPage() {
   return (
     <main className="details">
       <div className="details__container">
+        <h4 className="bread-crumbds-details">
+          <NavLink to={"/"}>Главная</NavLink> /
+          <NavLink to={"/catalog"}>Каталог</NavLink> /{" "}
+          <strong>{productById.name}</strong>
+        </h4>
         <div className="details__top">
           <div>
             <div className="details__imgmain">
@@ -35,10 +45,15 @@ export default function DetailsPage() {
               </div>
             </div>
             <div className="details__current">
-              <button className="details__button-smole">-</button>
-              <p className="details__count">1</p>
-              <button className="details__button-smole">+</button>
-              <button className="details__cart">В корзину</button>
+              <NavLink to={"/catalog"}>
+                <button
+                  onClick={() => addProductToCart(productById)}
+                  className="details__cart"
+                >
+                  В корзину
+                </button>
+              </NavLink>
+
               <button className="details__heart">
                 <img className="details__heart-img" src={img_heart} alt="" />
               </button>

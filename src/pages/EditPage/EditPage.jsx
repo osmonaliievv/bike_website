@@ -8,7 +8,7 @@ export default function EditPage({ openEditModal, setOpenEditModal }) {
   const [updateName, setUpdateName] = useState("");
   const [updatePrice, setUpdatePrice] = useState("");
   const updatePost = () => {
-    if (!updateImage.trim() || !updateName.trim() || !updatePrice.trim()) {
+    if (!updateImage || !updateName || !updatePrice) {
       alert("лее куда летишь");
     } else {
       const updatedPost = {
