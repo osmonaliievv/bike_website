@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Cards from "react-credit-cards-2";
 import "./Payment.scss";
 import ReactCreditCards from "react-credit-cards-2";
+import { NavLink } from "react-router-dom";
 const PaymentForm = () => {
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
@@ -10,6 +11,9 @@ const PaymentForm = () => {
   const [focus, setFocused] = useState("");
   return (
     <div>
+      <h4 className="bread-crumbds-payment">
+        <NavLink to={"/catalog"}>Каталог</NavLink> / <strong>Оплата</strong>
+      </h4>
       <ReactCreditCards
         cvc={cvc}
         expiry={expiry}
