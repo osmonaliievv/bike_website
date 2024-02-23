@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useProduct } from '../../context/ProductContextProvider';
-import './Products.css';
+import React, { useEffect, useState } from "react";
+import { useProduct } from "../../context/ProductContextProvider";
+import "./Products.css";
 
 const AddProduct = () => {
-  const { addProduct } = useProduct();
+  const { addProduct, categories, getCategories } = useProduct();
   const [product, setProduct] = useState({
     image: "",
     name: "",
@@ -13,9 +13,12 @@ const AddProduct = () => {
     frame: "",
     size: "",
     country: "",
+    category: "",
     descr: "",
   });
-
+  useEffect(() => {
+    getCategories();
+  }, []);
   const handleInput = (e) => {
     if (e.target.name === "price") {
       const obj = {
@@ -35,7 +38,7 @@ const AddProduct = () => {
     addProduct(product);
   };
   return (
-    <main>
+    <main className="add-inputs">
       <input
         className="Addproduct-input"
         onChange={handleInput}
@@ -43,6 +46,13 @@ const AddProduct = () => {
         name="image"
         placeholder="Image"
       />
+      {/* <CategorySelector categories={categories} handleInput={handleInput} /> */}
+      <select onChange={handleInput} name="category">
+        <option value="">Выберите Категорию</option>
+        {categories.map((elem) => (
+          <option value={`${elem.name}`}>{elem.name}</option>
+        ))}
+      </select>
       <input
         className="Addproduct-input"
         onChange={handleInput}

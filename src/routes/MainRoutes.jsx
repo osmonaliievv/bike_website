@@ -32,6 +32,8 @@ import Login from "../components/Auth/Login";
 import Auth from "../components/Auth/Auth";
 import { useAuthContext } from "../context/AuthContextProvider";
 import { ADMIN } from "../helpers/const";
+import Like from "../pages/CartPage/Like";
+
 export const PUBLIC_ROUTES = [
   {
     id: 1,
@@ -103,10 +105,12 @@ export const PUBLIC_ROUTES = [
     path: "*",
     element: <NotFoundPage />,
   },
+      { id: 10, path: "/payment", element: <PaymentForm /> },
+  { id: 11, path: "/favourites", element: <Like /> },
 ];
 const PRIVATE_ROUTES = [
-  { id: 10, path: "/admin", element: <AdminPage /> },
-  { id: 11, path: "/edit/:id", element: <EditPage /> },
+  { id: 12, path: "/admin", element: <AdminPage /> },
+  { id: 13, path: "/edit/:id", element: <EditPage /> },
 ];
 
 export default function MainRoutes() {
