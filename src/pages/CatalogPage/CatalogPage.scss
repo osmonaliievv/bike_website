@@ -1,6 +1,6 @@
 @import "../../styles/style.scss";
 .catalog__top {
-  background: url("../../img/catalogPage/Catalog-bg.png");
+  background: url("../../img/catalogPage/Catalog-bg.png") no-repeat;
 }
 .catalog-img-ibg {
   margin-bottom: toRem(25);
@@ -17,8 +17,16 @@
   line-height: 123%;
   letter-spacing: 5%;
   text-align: left;
-  padding-top: 134px;
+  padding-top: 65px;
   padding-bottom: 65px;
+}
+.bread-crumbds {
+  padding-top: 48px;
+  color: white;
+}
+.bread-crumbds strong {
+  padding-top: 48px;
+  color: #f57520;
 }
 .catalog__container_top {
   display: flex;

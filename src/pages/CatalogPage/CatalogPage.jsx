@@ -54,6 +54,9 @@ const CatalogPage = () => {
       <div className="catalog">
         <div className="catalog__top">
           <div className="catalog__container">
+            <h4 className="bread-crumbds">
+              <NavLink to={"/"}>Главная</NavLink> / <strong>Каталог</strong>
+            </h4>
             <h2 className="catalog__top-h2">Горные велосипеды</h2>
           </div>
         </div>

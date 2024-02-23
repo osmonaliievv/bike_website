@@ -28,6 +28,7 @@ import EditPage from "../pages/EditPage/EditPage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import Layout from "../components/Layout";
+import Like from "../pages/CartPage/Like";
 
 export const PUBLIC_ROUTES = [
   {
@@ -90,6 +91,7 @@ export const PUBLIC_ROUTES = [
     element: <NotFoundPage />,
   },
   { id: 8, path: "/payment", element: <PaymentForm /> },
+  { id: 9, path: "/favourites", element: <Like /> },
 ];
 
 export default function MainRoutes() {

@@ -4,6 +4,16 @@
   display: flex;
   justify-content: space-between;
 }
+.bread-crumbds-details {
+  display: flex;
+  gap: 10px;
+  color: black;
+  padding-bottom: 50px;
+}
+.bread-crumbds-details strong {
+  color: rgb(245, 117, 32);
+}
+
 .details {
   margin-top: 20px;
   // &__container {
@@ -106,6 +116,7 @@
   }
   &__current {
     display: flex;
+    align-items: center;
     margin-top: 100px;
     gap: 16px;
   }

@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "./DetailsPage.scss";
 import "../../styles/common.scss";
+
 import img_main from "../../img/imgMainPhoto/image 68.png";
 import { useParams } from "react-router-dom";
+import save from "../../img/cartPage/save-svgrepo-com (1).svg";
+import { NavLink, useParams } from "react-router-dom";
 import { useDetail } from "../../context/DetailContextProvider";
+import { useCart } from "../../context/CartContextProvider";
+import { useLike } from "../../context/FavoritesContextProvider";
 
 export default function DetailsPage() {
   const { getProductById, productById, likes, addFavourites } = useDetail();
+  const { addProductToCart, getCart } = useCart();
+  const { addProductsToLike } = useLike();
+  useEffect(() => {
+    getCart();
+  }, []);
   const { id } = useParams();
   const likeCount = 0;
   useEffect(() => {
@@ -36,6 +46,11 @@ export default function DetailsPage() {
   return (
     <main className="details">
       <div className="details__container">
+        <h4 className="bread-crumbds-details">
+          <NavLink to={"/"}>Главная</NavLink> /
+          <NavLink to={"/catalog"}>Каталог</NavLink> /{" "}
+          <strong>{productById.name}</strong>
+        </h4>
         <div className="details__top">
           <div>
             <div className="details__imgmain">

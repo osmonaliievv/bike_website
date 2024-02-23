@@ -104,20 +104,29 @@
   margin: 0;
 }
 
-.cart {
+.cart__price {
+  p {
+    width: 105px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.cart .cart {
   // .cart__count
 
-  &__count {
+  &__count input {
     width: 80px;
     height: 40px;
     border: 1px solid rgb(229, 229, 229);
     border-radius: 10px;
+    padding: 0 10px;
   }
 }
-
 .cart {
   // .cart__btn-caunt
 
+  color: orange;
   &__btn-caunt {
     display: flex;
     justify-content: space-around;
@@ -173,7 +182,13 @@
 }
 
 .cart__prices {
-  font-size: 16px;
+  p {
+    font-size: 16px;
+    width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
 
 .cart__totalword {
@@ -182,6 +197,11 @@
 
 .cart__totalsum {
   font-size: 16px;
+  width: 165px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 50px;
 }
 
 //bottom block
@@ -345,4 +365,18 @@
   .cart__title {
     margin-bottom: 30px;
   }
+}
+
+// ! like css
+.list-like {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.price-btnn img {
+  width: 80px;
 }
