@@ -1,15 +1,18 @@
 import React, { useEffect } from "react";
 import "./DetailsPage.scss";
 import "../../styles/common.scss";
-import img_main from "../../img/imgMainPhoto/image 68.png";
+import save from "../../img/cartPage/save-svgrepo-com (1).svg";
 import img_heart from "../../img/imgMainPhoto/Heart_icon_red_hollow.svg.png";
+// import img_heart from "../../img/imgMainPhoto/Heart_icon_red_hollow.svg.png";
 import { NavLink, useParams } from "react-router-dom";
 import { useDetail } from "../../context/DetailContextProvider";
 import { useCart } from "../../context/CartContextProvider";
+import { useLike } from "../../context/FavoritesContextProvider";
 
 export default function DetailsPage() {
   const { getProductById, productById } = useDetail();
   const { addProductToCart, getCart } = useCart();
+  const { addProductsToLike } = useLike();
   useEffect(() => {
     getCart();
   }, []);
@@ -56,6 +59,9 @@ export default function DetailsPage() {
 
               <button className="details__heart">
                 <img className="details__heart-img" src={img_heart} alt="" />
+              </button>
+              <button onClick={() => addProductsToLike(productById)}>
+                <img style={{ width: "90px" }} src={save} alt="" />
               </button>
             </div>
           </div>
