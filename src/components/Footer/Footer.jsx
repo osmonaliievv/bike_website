@@ -27,7 +27,9 @@ export default function Footer() {
               г. Бишкек, ул.Табышалиева 29
             </li>
             <li className="footer-mine-menu">
-              <img src={mail} alt="mail" />
+              <NavLink to={"/message"}>
+                <img className="footer__img-mail" src={mail} alt="mail" />
+              </NavLink>
               order@world-bike.ru
             </li>
           </ul>
