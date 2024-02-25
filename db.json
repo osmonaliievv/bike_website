@@ -1,149 +1,193 @@
 {
-	"products": [
-		{
-			"image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeydXHiYTforpxdFrB-Y1PLw7GehsLwDKDjQ&usqp=CAU",
-			"name": "Quantor Urkraft E-Bike - Pinion",
-			"price": 53000,
-			"color": "black",
-			"brand": "mellas",
-			"frame": "сталь",
-			"size": "L",
-			"country": "KG",
-			"category": "Горные велосипеды ",
-			"descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
-			"comment": [],
-			"id": 1
-		},
-		{
-			"image": "https://www.reidcycles.com.au/cdn/shop/products/reid-cycles-australia-express-road-bike-gunmetal-grey-s-333.jpg?v=1627437366&width=1946",
-			"name": "Express Road Bike | Road Bikes Online",
-			"price": 150000,
-			"color": "black",
-			"brand": "reid",
-			"frame": "сталь",
-			"size": "L",
-			"country": "KG",
-			"category": "Шоссейные велосипеды",
-			"descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
-			"comment": [],
-			"id": 2
-		},
-		{
-			"image": "https://www.hendrycycles.com.au/cdn/shop/products/Marlin4_22_2_Black_2048x.jpg?v=1629950485",
-			"name": "Trek Bicycle Corporation ",
-			"price": 70000,
-			"color": "Black",
-			"brand": "Trek Bicycle",
-			"frame": "Alpha Silver Aluminium, internal routing",
-			"size": "XS",
-			"country": "USA",
-			"category": "Шоссейные велосипеды",
-			"descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
-			"comment": [],
-			"id": 3
-		},
-		{
-			"image": "https://www.hendrycycles.com.au/cdn/shop/products/MY21-Adore-20_Color-A-Dark-Blue_400x.jpg?v=1637018268",
-			"name": "Giant Bike - Bike 0f your Dream",
-			"price": 40000,
-			"color": "Blue",
-			"brand": "Giant",
-			"frame": "ALUXX-Grade Aluminium",
-			"size": "S",
-			"country": "China",
-			"category": "Детские велосипеды ",
-			"descr": "For nearly four decades, Giant bikes has been devoted to bicycles and cycling. At Giant, the two-wheeler is more than just a machine, it’s an integral component of society, and a way to explore the boundaries of your world.",
-			"comment": [
-				["укен", "rishka@gmail.com"],
-				["пролдж", "rishka@gmail.com"],
-				["митьбю", "rishka@gmail.com"],
-				["вапролд", "rishka@gmail.com"]
-			],
-			"id": 4
-		},
-		{
-			"image": "https://www.hendrycycles.com.au/cdn/shop/products/BYK_E540x3i_Matte_Black_White_800x.jpg?v=1616559177",
-			"name": " SIRRUS 1.0",
-			"price": 65000,
-			"color": "Black",
-			"brand": "Specialized",
-			"frame": "Premium Aluminum, Fitness Geometry, ",
-			"size": "M",
-			"country": "USA",
-			"category": "Шоссейные велосипеды",
-			"descr": "Порой кажется, что чтобы все успеть нужно быть сразу в нескольких местах одновременно. Мы понимаем—жизнь сегодня движется довольно быстро, и чтобы вы не чувствовали себя белкой в колесе, мы сделали Sirrus.",
-			"comment": [],
-			"id": 5
-		},
-		{
-			"image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfL6hLUjSDDI5mNaCA_dTOmafWX7lqg9UkPA&usqp=CAU",
-			"name": "Spark 970",
-			"price": 247000,
-			"color": "Black",
-			"brand": "Scott",
-			"frame": "Алюминиевая рама Spark Alloy SL 6011/",
-			"size": "M",
-			"country": "USA",
-			"category": "Шоссейные велосипеды",
-			"descr": "Для нас это совершенно новый идеальный Spark 970.",
-			"comment": [],
-			"id": 6
-		},
-		{
-			"image": "https://www.bikeacademyshop.com/13065-large_default/mtb-scott-scale-rc-world-cup.jpg",
-			"name": "MTB SCOTT SCALE",
-			"price": 400000,
-			"color": "Green",
-			"brand": "SCOTT ",
-			"frame": "Carbon HMX scales",
-			"size": "M",
-			"country": "USA",
-			"category": "Горные велосипеды ",
-			"descr": "The ALL NEW Scale RC World Cup is the perfect blend of stiffness, light weight and 30 years of carbon experience. ",
-			"comment": [],
-			"id": 7
-		},
-		{
-			"image": "https://dqh479dn9vg99.cloudfront.net/wp-content/uploads/sites/9/2023/04/scott-foil-rc-pro-1.jpg",
-			"name": "Scott Bike",
-			"price": 50230,
-			"color": "Black",
-			"brand": "Scott",
-			"frame": "Aluminium+Titan",
-			"size": "M",
-			"country": "USA",
-			"category": "Горные велосипеды ",
-			"descr": "Карбоновая и алюминиевая версии рамы, увеличенные зазоры для покрышек, а также современная (и регулируемая) геометрия – количество и качество технологий действительно поражает.",
-			"comment": [],
-			"id": 8
-		},
-		{
-			"image": "https://pro-bike.ru/data/images/posts/51/38151/scale_910_scott_bike_-3.jpeg",
-			"name": "Bike Scott",
-			"price": 230002,
-			"color": "Gray",
-			"brand": "Scott",
-			"frame": "HMF Carbon Fibre w/Adjustable Head Angle",
-			"size": "SL",
-			"country": "USA",
-			"category": "",
-			"descr": "Вслед за выпуском крайне успешных новых моделей Spark в прошлом году",
-			"comment": [],
-			"id": 9
-		}
-	],
-	"categories": [
-		{
-			"name": "Шоссейные велосипеды",
-			"id": 1
-		},
-		{
-			"name": "Горные велосипеды ",
-			"id": 2
-		},
-		{
-			"name": "Детские велосипеды ",
-			"id": 3
-		}
-	]
+  "products": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeydXHiYTforpxdFrB-Y1PLw7GehsLwDKDjQ&usqp=CAU",
+      "name": "Quantor Urkraft E-Bike - Pinion",
+      "price": 53000,
+      "color": "black",
+      "brand": "mellas",
+      "frame": "сталь",
+      "size": "L",
+      "country": "KG",
+      "category": "Горные велосипеды ",
+      "descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
+      "comment": [],
+      "id": 1
+    },
+    {
+      "image": "https://www.reidcycles.com.au/cdn/shop/products/reid-cycles-australia-express-road-bike-gunmetal-grey-s-333.jpg?v=1627437366&width=1946",
+      "name": "Express Road Bike | Road Bikes Online",
+      "price": 150000,
+      "color": "black",
+      "brand": "reid",
+      "frame": "сталь",
+      "size": "L",
+      "country": "KG",
+      "category": "Шоссейные велосипеды",
+      "descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
+      "comment": [
+        [
+          "Чупик не такой сладкий, как этот велик",
+          "rishka@gmail.com"
+        ]
+      ],
+      "id": 2
+    },
+    {
+      "image": "https://www.hendrycycles.com.au/cdn/shop/products/Marlin4_22_2_Black_2048x.jpg?v=1629950485",
+      "name": "Trek Bicycle Corporation ",
+      "price": 70000,
+      "color": "Black",
+      "brand": "Trek Bicycle",
+      "frame": "Alpha Silver Aluminium, internal routing",
+      "size": "XS",
+      "country": "USA",
+      "category": "Шоссейные велосипеды",
+      "descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
+      "comment": [],
+      "id": 3
+    },
+    {
+      "image": "https://www.hendrycycles.com.au/cdn/shop/products/MY21-Adore-20_Color-A-Dark-Blue_400x.jpg?v=1637018268",
+      "name": "Giant Bike - Bike 0f your Dream",
+      "price": 40000,
+      "color": "Blue",
+      "brand": "Giant",
+      "frame": "ALUXX-Grade Aluminium",
+      "size": "S",
+      "country": "China",
+      "category": "Детские велосипеды ",
+      "descr": "For nearly four decades, Giant bikes has been devoted to bicycles and cycling. At Giant, the two-wheeler is more than just a machine, it’s an integral component of society, and a way to explore the boundaries of your world.",
+      "comment": [
+        [
+          "укен",
+          "rishka@gmail.com"
+        ],
+        [
+          "пролдж",
+          "rishka@gmail.com"
+        ],
+        [
+          "митьбю",
+          "rishka@gmail.com"
+        ],
+        [
+          "вапролд",
+          "rishka@gmail.com"
+        ]
+      ],
+      "id": 4
+    },
+    {
+      "image": "https://www.hendrycycles.com.au/cdn/shop/products/BYK_E540x3i_Matte_Black_White_800x.jpg?v=1616559177",
+      "name": " SIRRUS 1.0",
+      "price": 65000,
+      "color": "Black",
+      "brand": "Specialized",
+      "frame": "Premium Aluminum, Fitness Geometry, ",
+      "size": "M",
+      "country": "USA",
+      "category": "Шоссейные велосипеды",
+      "descr": "Порой кажется, что чтобы все успеть нужно быть сразу в нескольких местах одновременно. Мы понимаем—жизнь сегодня движется довольно быстро, и чтобы вы не чувствовали себя белкой в колесе, мы сделали Sirrus.",
+      "comment": [],
+      "id": 5
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfL6hLUjSDDI5mNaCA_dTOmafWX7lqg9UkPA&usqp=CAU",
+      "name": "Spark 970",
+      "price": 247000,
+      "color": "Black",
+      "brand": "Scott",
+      "frame": "Алюминиевая рама Spark Alloy SL 6011/",
+      "size": "M",
+      "country": "USA",
+      "category": "Шоссейные велосипеды",
+      "descr": "Для нас это совершенно новый идеальный Spark 970.",
+      "comment": [],
+      "id": 6
+    },
+    {
+      "image": "https://www.bikeacademyshop.com/13065-large_default/mtb-scott-scale-rc-world-cup.jpg",
+      "name": "MTB SCOTT SCALE",
+      "price": 400000,
+      "color": "Green",
+      "brand": "SCOTT ",
+      "frame": "Carbon HMX scales",
+      "size": "M",
+      "country": "USA",
+      "category": "Горные велосипеды ",
+      "descr": "The ALL NEW Scale RC World Cup is the perfect blend of stiffness, light weight and 30 years of carbon experience. ",
+      "comment": [],
+      "id": 7
+    },
+    {
+      "image": "https://dqh479dn9vg99.cloudfront.net/wp-content/uploads/sites/9/2023/04/scott-foil-rc-pro-1.jpg",
+      "name": "Scott Bike",
+      "price": 50230,
+      "color": "Black",
+      "brand": "Scott",
+      "frame": "Aluminium+Titan",
+      "size": "M",
+      "country": "USA",
+      "category": "Горные велосипеды ",
+      "descr": "Карбоновая и алюминиевая версии рамы, увеличенные зазоры для покрышек, а также современная (и регулируемая) геометрия – количество и качество технологий действительно поражает.",
+      "comment": [],
+      "id": 8
+    },
+    {
+      "image": "https://pro-bike.ru/data/images/posts/51/38151/scale_910_scott_bike_-3.jpeg",
+      "name": "Bike Scott",
+      "price": 230002,
+      "color": "Gray",
+      "brand": "Scott",
+      "frame": "HMF Carbon Fibre w/Adjustable Head Angle",
+      "size": "SL",
+      "country": "USA",
+      "category": "",
+      "descr": "Вслед за выпуском крайне успешных новых моделей Spark в прошлом году",
+      "comment": [],
+      "id": 9
+    },
+    {
+      "image": "data:image/jpeg;base64,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",
+      "name": "Горный Велик",
+      "price": 99999,
+      "color": "Black",
+      "brand": "Veronika",
+      "frame": "Alum",
+      "size": "M",
+      "country": "KZ",
+      "category": "Горные велосипеды ",
+      "descr": "Veronika никогда не изменит",
+      "comment": [
+        [
+          "Четкий & Сочный",
+          "admin@gmail.com"
+        ],
+        [
+          "Согл",
+          "rishka@gmail.com"
+        ]
+      ],
+      "id": 10
+    }
+  ],
+  "categories": [
+    {
+      "name": "Шоссейные велосипеды",
+      "id": 1
+    },
+    {
+      "name": "Горные велосипеды ",
+      "id": 2
+    },
+    {
+      "name": "Детские велосипеды ",
+      "id": 3
+    },
+    {
+      "name": "Трехколесные",
+      "id": 4
+    }
+  ]
 }

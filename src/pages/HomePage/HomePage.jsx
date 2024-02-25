@@ -11,6 +11,7 @@ import five from '../../img/mainPage/companies/05.jpg';
 import six from '../../img/mainPage/companies/06.jpg';
 import bike from '../../img/mainPage/moutain/01.jpg';
 import { useProduct } from '../../context/ProductContextProvider';
+import Swiper from '../../components/Swiper/Swiper';
 
 export default function HomePage() {
 	const { products, getProducts } = useProduct();
@@ -22,16 +23,7 @@ export default function HomePage() {
 		<main>
 			<section className="top-description">
 				<div className="top-description__container">
-					<div className="top-description__text">
-						<h1 className="top-description__title">Электро велосипеды</h1>
-						<h3 className="top-description__sub-title">
-							Cento10 Hybrid — это гоночный велосипед с помогающим педалированию электроприводом,
-							который устанавливает новый, очень высокий стандарт для данной категории
-						</h3>
-						<NavLink to={'/catalog'} className="top-description__button">
-							Подробнее
-						</NavLink>
-					</div>
+					<Swiper />
 				</div>
 			</section>
 			<section className="variants">
