@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './DetailsPage.scss';
 import '../../styles/common.scss';
-
+import img_main from "../../img/imgMainPhoto/image 68.png";
+import save from "../../img/cartPage/save-svgrepo-com (1).svg";
 import { NavLink, useParams } from 'react-router-dom';
 import { useDetail } from '../../context/DetailContextProvider';
 import { useCart } from '../../context/CartContextProvider';

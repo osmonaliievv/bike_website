@@ -17,22 +17,24 @@
 //   { id: 6, path: "/cart", element: <CartPage /> },
 //   { id: 7, path: "/payment", element: <PaymentForm /> },
 // =======
-import React from 'react';
-import HomePage from '../pages/HomePage/HomePage';
-import { NavLink, Route, Routes } from 'react-router-dom';
-import CatalogPage from '../pages/CatalogPage/CatalogPage';
-import AdminPage from '../pages/AdminPage/AdminPage';
-import CartPage from '../pages/CartPage/CartPage';
-import EditPage from '../pages/EditPage/EditPage';
-import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
-import DetailsPage from '../pages/DetailsPage/DetailsPage';
-import Layout from '../components/Layout';
-import PaymentForm from '../components/Payment/PaymentForm';
-import Login from '../components/Auth/Login';
-import Auth from '../components/Auth/Auth';
-import { useAuthContext } from '../context/AuthContextProvider';
-import { ADMIN } from '../helpers/const';
-import Like from '../pages/CartPage/Like';
+
+import React from "react";
+import HomePage from "../pages/HomePage/HomePage";
+import { NavLink, Route, Routes } from "react-router-dom";
+import CatalogPage from "../pages/CatalogPage/CatalogPage";
+import AdminPage from "../pages/AdminPage/AdminPage";
+import CartPage from "../pages/CartPage/CartPage";
+import EditPage from "../pages/EditPage/EditPage";
+import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
+import DetailsPage from "../pages/DetailsPage/DetailsPage";
+import Layout from "../components/Layout";
+import PaymentForm from "../components/Payment/PaymentForm";
+import Login from "../components/Auth/Login";
+import Auth from "../components/Auth/Auth";
+import { useAuthContext } from "../context/AuthContextProvider";
+import { ADMIN } from "../helpers/const";
+import Like from "../pages/CartPage/Like";
+import { Message } from "../components/Message/Message";
 
 export const PUBLIC_ROUTES = [
 	{
@@ -80,7 +82,6 @@ export const PUBLIC_ROUTES = [
 			</Layout>
 		),
 	},
-
 	{
 		id: 6,
 		path: '/payment',
@@ -122,6 +123,8 @@ export const PUBLIC_ROUTES = [
 			</Layout>
 		),
 	},
+      { id: 11, path: "/message", element: <Message /> },
+
 ];
 const PRIVATE_ROUTES = [
 	{ id: 12, path: '/admin', element: <AdminPage /> },
