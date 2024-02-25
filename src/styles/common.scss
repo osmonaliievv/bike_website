@@ -1,0 +1,5 @@
+@import './style.scss';
+
+.abs-title {
+	@include adaptiveValue('font-size', 64, 30);
+}

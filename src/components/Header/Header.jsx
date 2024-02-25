@@ -1,75 +1,120 @@
-import React, { useState, useEffect } from "react";
-import "./Header.scss";
-import icon from "../../img/icons/icon.svg";
-import search from "../../img/icons/search.svg";
-import contact from "../../img/icons/contact.svg";
-import heart from "../../img/icons/heart.svg";
-import corzina from "../../img/icons/corzina.svg";
-import burger_menu from "../../img/icons/burger-menu.svg";
+import React, { useState } from 'react';
+import './Header.scss';
+import icon from '../../img/icons/icon.svg';
+import authIcon from '../../img/imgMainPhoto/icons8-пользователь-мужчина-в-кружке-48 (1).png';
+import favourites from '../../img/icons/heart.svg';
+import cart from '../../img/icons/corzina.svg';
+import burgerNenu from '../../img/icons/burger-menu.svg';
+import closeMenuImg from '../../img/mainPage/Frame 433.svg';
+
+import { NavLink } from 'react-router-dom';
+import { useAuthContext } from '../../context/AuthContextProvider';
+import { ADMIN } from '../../helpers/const';
 
 export default function Header() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [menuVisible, setMenuVisible] = useState(false);
-  const [sidebarVisible, setSidebarVisible] = useState(false);
+	const [open, setOpen] = useState(false);
+	const [anchorEl, setAnchorEl] = useState(null);
+	const { user, logOut } = useAuthContext();
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+	const openMenu = () => {
+		setOpen(true);
+	};
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+	const closeMenu = () => {
+		setOpen(false);
+	};
 
-  const toggleMenu = () => {
-    setMenuVisible(!menuVisible);
-  };
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
 
-  const toggleSidebar = () => {
-    setSidebarVisible(!sidebarVisible);
-  };
+	const handleLogOut = () => {
+		logOut();
+		handleClose();
+	};
 
-  return (
-    <header className="header">
-      <div className="header__container">
-        <div className="header-logo" onClick={toggleSidebar}>
-          <img src={icon} alt="logo" />
-        </div>
-        {(isMobile && menuVisible) || !isMobile ? (
-          <div className="header-menu">
-            <div className="header-div">TRADE IN</div>
-            <div className="header-div">Велосипеды</div>
-            <div className="header-div">Аксессуары</div>
-          </div>
-        ) : null}
-        <ul className="header-icon">
-          <li>
-            <img src={search} alt="search" />
-          </li>
-          <li>
-            <img src={contact} alt="contact" />
-          </li>
-          <li>
-            <img src={heart} alt="heart" />
-          </li>
-          <li>
-            <img src={corzina} alt="corzina" />
-          </li>
-        </ul>
-        {isMobile && (
-          <div className="burger-menu" onClick={toggleMenu}>
-            <img src={burger_menu} alt="menu" />
-          </div>
-        )}
-        <div className={`sidebar ${sidebarVisible ? "open" : ""}`}>
-          <ul className="sidebar-menu">
-            <li className="sidebar-item">Главная</li>
-            <li className="sidebar-item">Товары</li>
-            <li className="sidebar-item">О нас</li>
-            <li className="sidebar-item">Контакты</li>
-          </ul>
-        </div>
-      </div>
-    </header>
-  );
+	const handleMenu = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+
+	const handleMenuItemClick = () => {
+		handleClose();
+	};
+
+	const handleOutsideClick = (event) => {
+		if (anchorEl && !anchorEl.contains(event.target)) {
+			handleClose();
+		}
+	};
+
+	return (
+		<header className="header">
+			<div className="header__container">
+				<div className="header__logo">
+					<NavLink to={'/'}>
+						<img src={icon} alt="logo" />
+					</NavLink>
+				</div>
+				<div className="app-bar">
+					<div className={`menu ${anchorEl ? 'open' : ''}`} onClick={handleOutsideClick}>
+						<ul>
+							<li>
+								<NavLink to={'/auth'} onClick={handleMenuItemClick}>
+									Register
+								</NavLink>
+							</li>
+							<li>
+								<NavLink to={'/login'} onClick={handleMenuItemClick}>
+									Log In
+								</NavLink>
+							</li>
+							<li onClick={handleLogOut}>Log Out</li>
+						</ul>
+					</div>
+				</div>
+				{/*  */}
+				<div className={`header__menu ${open ? '_open' : ''} menu-header`}>
+					<div className="header__close-menu" onClick={closeMenu}>
+						<img src={closeMenuImg} alt="" />
+					</div>
+					<ul className="menu-header__list">
+						<li className="menu-header__item">
+							<NavLink to={'/catalog'}>Каталог</NavLink>
+						</li>
+						{user && user.email == ADMIN ? (
+							<li className="menu-header__item">
+								<NavLink to={'/admin'} onClick={handleMenuItemClick}>
+									Админка
+								</NavLink>
+							</li>
+						) : null}
+					</ul>
+				</div>
+				<div className="header__icons">
+					<button className="avatar-button" onClick={handleMenu}>
+						<span className="account-circle-icon">
+							<span className="account-circle-icon">
+								{user && user.email ? (
+									<p>{user.email.slice(0, 1)}</p>
+								) : (
+									<>
+										<img src={authIcon} alt="ICON" />
+									</>
+								)}
+							</span>
+						</span>
+					</button>
+					<NavLink to={'/favourites'}>
+						<img src={favourites} alt="favourites" />
+					</NavLink>
+					<NavLink to={'/cart'}>
+						<img src={cart} alt="cart" />
+					</NavLink>
+					<button className="header__button" onClick={openMenu}>
+						<img src={burgerNenu} alt="burger" />
+					</button>
+				</div>
+			</div>
+		</header>
+	);
 }

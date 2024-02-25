@@ -1,1 +1,22 @@
 @import '../../styles/style.scss';
+
+.error {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: #f57520;
+	p {
+		&:first-child {
+			@include adaptiveValue('font-size', 250, 30);
+		}
+		&:nth-child(2) {
+			margin-bottom: toRem(15);
+		}
+	}
+	a {
+		color: blue;
+		text-decoration: underline;
+	}
+}

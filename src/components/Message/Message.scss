@@ -1,0 +1,40 @@
+@import '../../styles/style.scss';
+
+.message__form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 25px;
+	padding: 0 15px;
+	input {
+		color: #2f4f4f;
+		border: 2px solid #555;
+		margin-top: 12px;
+		padding: 10px 15px;
+		border-radius: 10px;
+		font-size: 25px;
+		font-weight: 450;
+		@include adaptiveValue('width', 326, 300);
+	}
+	.message__send {
+		padding: toRem(15) toRem(25);
+		margin-top: 12px;
+		border-radius: 10px;
+		border: 2px solid black;
+		background: #e1e1e1;
+		margin-bottom: toRem(25);
+	}
+	.message__textarea {
+		margin-top: 12px;
+		border: 2px solid black;
+		@include adaptiveValue('min-width', 400, 300);
+		min-height: 250px;
+		border-radius: 10px;
+	}
+	.message__con-us {
+		margin-top: toRem(20);
+		font-size: toRem(25);
+		font-weight: 600;
+	}
+}

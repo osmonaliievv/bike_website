@@ -1,0 +1,65 @@
+@import '../../styles/style.scss';
+
+.auth {
+	padding: toRem(30) 0 toRem(30) 0;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: toRem(20);
+	}
+
+	&__title {
+		font-size: toRem(25);
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	&__error {
+	}
+
+	&__input {
+		background-color: #e1e1e1;
+		padding: toRem(10) toRem(15);
+		font-size: toRem(20);
+		border-radius: toRem(10);
+		color: #000000;
+		outline: none;
+		transition: all 0.3s;
+		&:focus {
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	&__button {
+		background-color: #ea7b36;
+		color: #fff;
+		text-transform: uppercase;
+		padding: toRem(15) toRem(10);
+		border-radius: toRem(10);
+		transition: all 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #f27425;
+			}
+		}
+	}
+
+	&__google {
+		display: flex;
+		align-items: center;
+		gap: toRem(10);
+		padding: toRem(10) toRem(23);
+		border: 1px solid #000;
+		border-radius: 10px;
+
+		svg {
+			width: toRem(25);
+			height: toRem(30);
+		}
+	}
+
+	&__checkbox {
+	}
+}
