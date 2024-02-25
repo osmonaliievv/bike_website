@@ -6,7 +6,6 @@
 	// .cart__title
 
 	&__title {
-		/* desk h2 */
 		color: rgb(16, 16, 16);
 		@include adaptiveValue('font-size', 64, 35);
 		font-weight: 400;
