@@ -3,7 +3,7 @@ import "./DetailsPage.scss";
 import "../../styles/common.scss";
 
 import img_main from "../../img/imgMainPhoto/image 68.png";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import save from "../../img/cartPage/save-svgrepo-com (1).svg";
 import { NavLink, useParams } from "react-router-dom";
 import { useDetail } from "../../context/DetailContextProvider";
