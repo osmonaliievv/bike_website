@@ -11,29 +11,30 @@ import { ADMIN } from '../../helpers/const';
 
 const CatalogPage = () => {
 	const { products, getProducts, deleteProduct, getOneProduct, loading } = useProduct();
-	const [currentPage, setCurrentPage] = useState(1);
-	const displayedProducts = 6;
-	const navigate = useNavigate();
-	const [openEditModal, setOpenEditModal] = useState(false);
 	const { user } = useAuthContext();
+	const [openEditModal, setOpenEditModal] = useState(false);
+	const [maxPriceValue, setMaxPriceValue] = useState(0);
+	const [minPriceValue, setMinPriceValue] = useState(0);
+	const [currentPage, setCurrentPage] = useState(1);
+	const navigate = useNavigate();
+
+	const displayedProducts = 6;
 
 	useEffect(() => {
 		getProducts();
 	}, []);
-	// ! Филтр по ценам
-	const [maxPriceValue, setMaxPriceValue] = useState(0);
-	const [minPriceValue, setMinPriceValue] = useState(0);
-	const prices = products.map((product) => product.price);
 
+	// ! Филтр по ценам
+	const prices = products.map((product) => product.price);
 	const result = products.filter((elem) => {
 		return elem.price >= minPriceValue && elem.price <= maxPriceValue;
 	});
+
 	useEffect(() => {
 		function findMaxPrice(prices) {
 			const maxPrice = Math.max(...prices);
 			setMaxPriceValue(maxPrice);
 		}
-
 		findMaxPrice(prices);
 	}, [products]);
 
@@ -42,12 +43,10 @@ const CatalogPage = () => {
 			const minPrice = Math.min(...prices);
 			setMinPriceValue(minPrice);
 		}
-
 		findMinPrice(prices);
 	}, [products]);
 
 	//! PAGINATION
-
 	const toIndex = currentPage * displayedProducts;
 	const fromIndex = toIndex - displayedProducts;
 	const displayedProductsCount = result.slice(fromIndex, toIndex);

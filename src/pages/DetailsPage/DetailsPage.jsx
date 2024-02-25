@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './DetailsPage.scss';
 import '../../styles/common.scss';
-import img_main from "../../img/imgMainPhoto/image 68.png";
-import save from "../../img/cartPage/save-svgrepo-com (1).svg";
+import img_main from '../../img/imgMainPhoto/image 68.png';
+import save from '../../img/cartPage/save-svgrepo-com (1).svg';
 import { NavLink, useParams } from 'react-router-dom';
 import { useDetail } from '../../context/DetailContextProvider';
 import { useCart } from '../../context/CartContextProvider';
@@ -12,8 +12,8 @@ import { useAuthContext } from '../../context/AuthContextProvider';
 
 export default function DetailsPage() {
 	const { getProductById, productById } = useDetail();
-	const { addProductToCart } = useCart();
-	const { addProductsToLike } = useLike();
+	const { addProductToCart, checkProductInCart } = useCart();
+	const { addProductsToLike, checkProductInLike } = useLike();
 	const { addComment } = useProduct();
 	const { id } = useParams();
 	const [comment, setComment] = useState('');
@@ -36,47 +36,41 @@ export default function DetailsPage() {
 		await getProductById(id);
 	};
 
-	const buttonStyle = {
-		color: 'white',
-		padding: '10px',
-		// border: "none",
-		// cursor: "pointer",
-	};
-
 	return (
 		<main className="details">
 			<div className="details__container">
 				<h4 className="bread-crumbds-details">
-					<NavLink to={'/'}>Главная</NavLink> /<NavLink to={'/catalog'}>Каталог</NavLink> /{' '}
+					<NavLink to={'/'}>Главная</NavLink> /<NavLink to={'/catalog'}>Каталог</NavLink> /
 					<strong>{productById.name}</strong>
 				</h4>
 				<div className="details__top">
 					<div>
-						<div className="details__imgmain">
+						<div className="details__imgmain-ibg">
 							<img src={productById.image} alt="" />
 						</div>
 					</div>
 					<div className="details__block2 ">
-						<div className="details__997 ">
-							{productById.name}
-							<p className="details__vnalichii">В наличии</p>
-						</div>
+						<div className="details__997 ">{productById.name}</div>
 						<p className="details__price">{productById.price}</p>
 						<div className="details__size">
 							<p>Размер:</p>
 							<div className="details__sizess">
-								<button className="details__sizes1">{productById.size}</button>
+								<p className="details__sizes1">{productById.size}</p>
 							</div>
 						</div>
 						<div className="details__current">
-							<button className="details__button-smole">-</button>
-							<p className="details__count">1</p>
-							<button className="details__button-smole">+</button>
-							<button className="details__cart" onClick={() => addProductToCart(productById)}>
+							<button
+								className={`details__cart ${
+									productById && checkProductInCart(productById.id) ? 'selected' : ''
+								}`}
+								onClick={() => {
+									addProductToCart(productById);
+								}}
+								disabled={checkProductInCart(productById.id)}>
 								В корзину
 							</button>
 							<div>
-								<button style={buttonStyle} onClick={handleLikeClick}>
+								<button onClick={handleLikeClick}>
 									<svg
 										className="details__heart-img"
 										width="21"
@@ -91,9 +85,25 @@ export default function DetailsPage() {
 									</svg>
 								</button>
 							</div>
-							<div className="div" onClick={() => addProductsToLike(productById)}>
-								фафка
-							</div>
+							<button
+								disabled={checkProductInLike(productById.id)}
+								className="details__izbranoe"
+								onClick={() => addProductsToLike(productById)}>
+								<svg
+									width="10"
+									height="14"
+									viewBox="0 0 10 14"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M9 13.5L5 9.5L1 13.5V1.5C1 1.23478 1.10536 0.98043 1.29289 0.792893C1.48043 0.605357 1.73478 0.5 2 0.5H8C8.26522 0.5 8.51957 0.605357 8.70711 0.792893C8.89464 0.98043 9 1.23478 9 1.5V13.5Z"
+										stroke="#000001"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										fill={checkProductInLike(id) ? 'black' : ''}
+									/>
+								</svg>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -179,12 +189,3 @@ export default function DetailsPage() {
 		</main>
 	);
 }
-
-/*
-
-1) Создать инпут для ввода текста
-2) Отправить этот текст на db.json
-3) Получить эти данные из db.json
-4) Отобразить данные из db.json
-
-*/

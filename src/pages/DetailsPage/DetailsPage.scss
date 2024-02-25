@@ -6,6 +6,7 @@
 }
 .bread-crumbds-details {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 10px;
 	color: black;
 	padding-bottom: 50px;
@@ -19,11 +20,12 @@
 	// &__container {
 	// }
 
-	&__imgmain {
+	&__imgmain-ibg {
+		@include adaptiveValue('width', 500, 290);
+		@include adaptiveValue('padding-bottom', 300, 180);
+		margin: 0 auto toRem(25) auto;
 		img {
-			// max-width: 100%;
-			width: 600px;
-			height: 400px;
+			max-width: 100%;
 		}
 	}
 }
@@ -110,10 +112,6 @@
 		border: 1px solid black;
 		margin-top: 24px;
 	}
-	.details__sizes1:hover {
-		background: black;
-		color: white;
-	}
 	&__current {
 		display: flex;
 		align-items: center;
@@ -136,26 +134,24 @@
 	}
 
 	&__cart {
-		width: 180px;
-		height: 52px;
 		border-radius: 10px;
+		padding: toRem(15) toRem(25);
 		background: rgb(245, 117, 32);
+		color: #fff;
 	}
 
 	&__heart {
 		width: 52px;
 		height: 52px;
-		left: 335px;
-		right: -335px;
-		border-radius: 10px;
-		background: rgb(248, 248, 248);
-		border: 1px solid rgb(245, 117, 32);
 	}
 
 	&__heart-img {
 		width: 35px;
 		height: 35px;
 	}
+}
+.details__cart.selected {
+	background: black !important;
 }
 .details {
 	&__block3 {
@@ -167,7 +163,7 @@
 		height: 49px;
 		left: 320px;
 		right: 671px;
-		margin-top: 107px;
+		margin-top: 30px;
 		color: rgb(16, 16, 16);
 		@include adaptiveValue('font-size', 40, 25);
 		font-weight: 400;
@@ -176,37 +172,11 @@
 	}
 
 	&__name-descr {
-		width: 1280px;
-		// height: 96px;
-		left: 320px;
-		right: -320px;
-		top: 1175px;
-		bottom: -1086px;
 		color: rgb(16, 16, 16);
-		margin-top: 40px;
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 200%;
 		text-align: left;
-		@media (max-width: 1280px) {
-			width: 90%;
-			margin-bottom: 150px;
-		}
-		@media (max-width: 590px) {
-			margin-bottom: 200px;
-		}
-		@media (max-width: 430px) {
-			width: 90%;
-			margin-bottom: 250px;
-		}
-		@media (max-width: 410px) {
-			width: 90%;
-			margin-bottom: 300px;
-		}
-		@media (max-width: 370px) {
-			width: 90%;
-			margin-bottom: 350px;
-		}
 	}
 }
 .details {
@@ -259,6 +229,16 @@
 	}
 }
 
+.details__izbranoe {
+	&:hover {
+		cursor: pointer;
+	}
+	svg {
+		width: 33px !important;
+		height: 30px !important;
+	}
+}
+
 .details {
 	&__coments {
 		padding-bottom: toRem(50);
@@ -286,7 +266,7 @@
 		background-color: #d2d2d2;
 		width: 100%;
 		outline: none;
-		font-size: toRem(25);
+		@include adaptiveValue('font-size', 25, 20);
 	}
 
 	&__button {
@@ -333,5 +313,7 @@
 
 	&__user-com {
 		padding-left: toRem(50);
+		word-break: break-word;
+		line-height: normal;
 	}
 }

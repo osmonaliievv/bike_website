@@ -1,40 +1,22 @@
-// <<<<<<< HEAD
-// import React from "react";
-// import HomePage from "../pages/HomePage/HomePage";
-// import { Route, Routes } from "react-router-dom";
-// import DetailsPage from "../pages/DetailsPage/DetailsPage";
-// import CatalogPage from "../pages/CatalogPage/CatalogPage";
-// import AdminPage from "../pages/AdminPage/AdminPage";
-// import EditPage from "../pages/EditPage/EditPage";
-// import CartPage from "../pages/CartPage/CartPage";
+import React from 'react';
+import { NavLink, Route, Routes } from 'react-router-dom';
+import { useAuthContext } from '../context/AuthContextProvider';
+import { ADMIN } from '../helpers/const';
 
-// export const PUBLIC_ROUTES = [
-//   { id: 1, path: "/", element: <HomePage /> },
-//   { id: 2, path: "/catalog", element: <CatalogPage /> },
-//   { id: 3, path: "/admin", element: <AdminPage /> },
-//   { id: 4, path: "/edit", element: <EditPage /> },
-//   { id: 5, path: "/details/:id", element: <DetailsPage /> },
-//   { id: 6, path: "/cart", element: <CartPage /> },
-//   { id: 7, path: "/payment", element: <PaymentForm /> },
-// =======
-
-import React from "react";
-import HomePage from "../pages/HomePage/HomePage";
-import { NavLink, Route, Routes } from "react-router-dom";
-import CatalogPage from "../pages/CatalogPage/CatalogPage";
-import AdminPage from "../pages/AdminPage/AdminPage";
-import CartPage from "../pages/CartPage/CartPage";
-import EditPage from "../pages/EditPage/EditPage";
-import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
-import DetailsPage from "../pages/DetailsPage/DetailsPage";
-import Layout from "../components/Layout";
-import PaymentForm from "../components/Payment/PaymentForm";
-import Login from "../components/Auth/Login";
-import Auth from "../components/Auth/Auth";
-import { useAuthContext } from "../context/AuthContextProvider";
-import { ADMIN } from "../helpers/const";
-import Like from "../pages/CartPage/Like";
-import { Message } from "../components/Message/Message";
+import HomePage from '../pages/HomePage/HomePage';
+import CatalogPage from '../pages/CatalogPage/CatalogPage';
+import AdminPage from '../pages/AdminPage/AdminPage';
+import CartPage from '../pages/CartPage/CartPage';
+import EditPage from '../pages/EditPage/EditPage';
+import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
+import DetailsPage from '../pages/DetailsPage/DetailsPage';
+import Layout from '../components/Layout';
+import PaymentForm from '../components/Payment/PaymentForm';
+import Login from '../components/Auth/Login';
+import Auth from '../components/Auth/Auth';
+import Like from '../pages/CartPage/Like';
+import Message from '../components/Message/Message';
+import Header from '../components/Header/Header';
 
 export const PUBLIC_ROUTES = [
 	{
@@ -57,15 +39,6 @@ export const PUBLIC_ROUTES = [
 	},
 	{
 		id: 3,
-		path: '/edit',
-		element: (
-			<Layout>
-				<EditPage />
-			</Layout>
-		),
-	},
-	{
-		id: 4,
 		path: '/details/:id',
 		element: (
 			<Layout>
@@ -74,7 +47,7 @@ export const PUBLIC_ROUTES = [
 		),
 	},
 	{
-		id: 5,
+		id: 4,
 		path: '/cart',
 		element: (
 			<Layout>
@@ -83,7 +56,7 @@ export const PUBLIC_ROUTES = [
 		),
 	},
 	{
-		id: 6,
+		id: 5,
 		path: '/payment',
 		element: (
 			<Layout>
@@ -92,7 +65,7 @@ export const PUBLIC_ROUTES = [
 		),
 	},
 	{
-		id: 7,
+		id: 6,
 		path: '/login',
 		element: (
 			<Layout>
@@ -101,7 +74,7 @@ export const PUBLIC_ROUTES = [
 		),
 	},
 	{
-		id: 8,
+		id: 7,
 		path: '/auth',
 		element: (
 			<Layout>
@@ -110,29 +83,38 @@ export const PUBLIC_ROUTES = [
 		),
 	},
 	{
-		id: 9,
+		id: 10,
 		path: '*',
 		element: <NotFoundPage />,
 	},
 	{
-		id: 10,
+		id: 11,
 		path: '/favourites',
 		element: (
-			<Layout>
+			<>
+				<Header />
 				<Like />
+			</>
+		),
+	},
+	{
+		id: 12,
+		path: '/message',
+		element: (
+			<Layout>
+				<Message />
 			</Layout>
 		),
 	},
-      { id: 11, path: "/message", element: <Message /> },
-
 ];
 const PRIVATE_ROUTES = [
-	{ id: 12, path: '/admin', element: <AdminPage /> },
-	{ id: 13, path: '/edit/:id', element: <EditPage /> },
+	{ id: 13, path: '/admin', element: <AdminPage /> },
+	{ id: 14, path: '/edit/:id', element: <EditPage /> },
 ];
 
 export default function MainRoutes() {
 	const { user } = useAuthContext();
+
 	return (
 		<>
 			<Routes>

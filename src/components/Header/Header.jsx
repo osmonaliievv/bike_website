@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Header.scss';
 import icon from '../../img/icons/icon.svg';
 import authIcon from '../../img/imgMainPhoto/icons8-пользователь-мужчина-в-кружке-48 (1).png';
@@ -6,40 +6,47 @@ import favourites from '../../img/icons/heart.svg';
 import cart from '../../img/icons/corzina.svg';
 import burgerNenu from '../../img/icons/burger-menu.svg';
 import closeMenuImg from '../../img/mainPage/Frame 433.svg';
-import { Link, NavLink } from 'react-router-dom';
+
+import { NavLink } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContextProvider';
 import { ADMIN } from '../../helpers/const';
 
 export default function Header() {
 	const [open, setOpen] = useState(false);
+	const [anchorEl, setAnchorEl] = useState(null);
+	const { user, logOut } = useAuthContext();
+
 	const openMenu = () => {
 		setOpen(true);
 	};
+
 	const closeMenu = () => {
 		setOpen(false);
 	};
-	const { user, logOut } = useAuthContext();
-	const [anchorEl, setAnchorEl] = useState(null);
 
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
+
 	const handleLogOut = () => {
 		logOut();
-		handleClose(); // Закрываем меню после выхода
+		handleClose();
 	};
+
 	const handleMenu = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
+
 	const handleMenuItemClick = () => {
-		handleClose(); // Закрываем меню при выборе пункта
+		handleClose();
 	};
 
 	const handleOutsideClick = (event) => {
 		if (anchorEl && !anchorEl.contains(event.target)) {
-			handleClose(); // Закрываем меню при клике вне него
+			handleClose();
 		}
 	};
+
 	return (
 		<header className="header">
 			<div className="header__container">
@@ -48,26 +55,7 @@ export default function Header() {
 						<img src={icon} alt="logo" />
 					</NavLink>
 				</div>
-				{/*  */}
 				<div className="app-bar">
-					{/* {user ? (
-            <div className="avatar-container">
-              <button className="avatar-button" onClick={handleMenu}>
-                fghjkl;
-              </button>
-            </div>
-          ) : (
-            <button className="avatar-button" onClick={handleMenu}>
-              <span className="account-circle-icon">
-                <img className="avatar-auth" alt="" src={authIcon} />
-              </span>
-            </button>
-          )} */}
-					<button className="avatar-button" onClick={handleMenu}>
-						<span className="account-circle-icon">
-							<img className="avatar-auth" alt="" src={authIcon} />
-						</span>
-					</button>
 					<div className={`menu ${anchorEl ? 'open' : ''}`} onClick={handleOutsideClick}>
 						<ul>
 							<li>
@@ -93,11 +81,8 @@ export default function Header() {
 						<li className="menu-header__item">
 							<NavLink to={'/catalog'}>Каталог</NavLink>
 						</li>
-						<li className="menu-header__item">
-							<NavLink to={'/catalog'}>Каталог</NavLink>
-						</li>
 						{user && user.email == ADMIN ? (
-							<li>
+							<li className="menu-header__item">
 								<NavLink to={'/admin'} onClick={handleMenuItemClick}>
 									Админка
 								</NavLink>
@@ -106,6 +91,19 @@ export default function Header() {
 					</ul>
 				</div>
 				<div className="header__icons">
+					<button className="avatar-button" onClick={handleMenu}>
+						<span className="account-circle-icon">
+							<span className="account-circle-icon">
+								{user && user.email ? (
+									<p>{user.email.slice(0, 1)}</p>
+								) : (
+									<>
+										<img src={authIcon} alt="ICON" />
+									</>
+								)}
+							</span>
+						</span>
+					</button>
 					<NavLink to={'/favourites'}>
 						<img src={favourites} alt="favourites" />
 					</NavLink>

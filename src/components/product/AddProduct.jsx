@@ -39,7 +39,7 @@ const AddProduct = () => {
 		addProduct(product);
 	};
 	return (
-		<main className="add-inputs">
+		<div className="add-inputs">
 			<input
 				className="Addproduct-input"
 				onChange={handleInput}
@@ -47,7 +47,6 @@ const AddProduct = () => {
 				name="image"
 				placeholder="Image"
 			/>
-			{/* <CategorySelector categories={categories} handleInput={handleInput} /> */}
 			<select onChange={handleInput} name="category">
 				<option value="">Выберите Категорию</option>
 				{categories.map((elem) => (
@@ -113,7 +112,7 @@ const AddProduct = () => {
 				placeholder="Description"
 			/>
 			<button onClick={handleClick}>Add</button>
-		</main>
+		</div>
 	);
 };
 

@@ -26,12 +26,12 @@ const CartPage = () => {
 					<div className="cart__cont-one">
 						<div className="cart__block-one-left">
 							<div className="cart__display title">
-								<a className="cart__back-to-shopping" href="#">
+								<NavLink to={'/catalog'} className="cart__back-to-shopping">
 									Вернуться к покупкам
-								</a>
-								<a onClick={cartCleaner} className="cart__empty-trash" href="#">
+								</NavLink>
+								<button onClick={cartCleaner} className="cart__empty-trash" href="#">
 									Oчистить корзину
-								</a>
+								</button>
 							</div>
 							{cart.products.map((elem) => (
 								<div className="cart__blk-one" key={elem.item.id}>
@@ -86,7 +86,9 @@ const CartPage = () => {
 								</div>
 							</div>
 							<div className="cart__bottom">
-								<button className="cart__btn">Оформить заказ</button>
+								<NavLink className="cart__btn" to={'/payment'}>
+									Оформить заказ
+								</NavLink>
 							</div>
 						</div>
 					</div>

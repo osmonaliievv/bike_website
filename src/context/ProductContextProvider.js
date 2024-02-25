@@ -36,8 +36,7 @@ export default function ProductContextProvider({ children }) {
 	//! ADD COMMET
 	const addComment = async (id, comment) => {
 		const { data } = await axios(`${API}/${id}`);
-		const isArr = data.comment ? data.comment : [];
-		const newComment = [...isArr, comment];
+		const newComment = [...data.comment, comment];
 		await axios.patch(`${API}/${id}`, { ...data, comment: newComment });
 	};
 	// !GET

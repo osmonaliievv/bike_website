@@ -1,13 +1,149 @@
 {
-  "products": [],
-  "categories": [
-    {
-      "name": "велосипед",
-      "id": 1
-    },
-    {
-      "name": "машина",
-      "id": 2
-    }
-  ]
+	"products": [
+		{
+			"image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeydXHiYTforpxdFrB-Y1PLw7GehsLwDKDjQ&usqp=CAU",
+			"name": "Quantor Urkraft E-Bike - Pinion",
+			"price": 53000,
+			"color": "black",
+			"brand": "mellas",
+			"frame": "сталь",
+			"size": "L",
+			"country": "KG",
+			"category": "Горные велосипеды ",
+			"descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
+			"comment": [],
+			"id": 1
+		},
+		{
+			"image": "https://www.reidcycles.com.au/cdn/shop/products/reid-cycles-australia-express-road-bike-gunmetal-grey-s-333.jpg?v=1627437366&width=1946",
+			"name": "Express Road Bike | Road Bikes Online",
+			"price": 150000,
+			"color": "black",
+			"brand": "reid",
+			"frame": "сталь",
+			"size": "L",
+			"country": "KG",
+			"category": "Шоссейные велосипеды",
+			"descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
+			"comment": [],
+			"id": 2
+		},
+		{
+			"image": "https://www.hendrycycles.com.au/cdn/shop/products/Marlin4_22_2_Black_2048x.jpg?v=1629950485",
+			"name": "Trek Bicycle Corporation ",
+			"price": 70000,
+			"color": "Black",
+			"brand": "Trek Bicycle",
+			"frame": "Alpha Silver Aluminium, internal routing",
+			"size": "XS",
+			"country": "USA",
+			"category": "Шоссейные велосипеды",
+			"descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
+			"comment": [],
+			"id": 3
+		},
+		{
+			"image": "https://www.hendrycycles.com.au/cdn/shop/products/MY21-Adore-20_Color-A-Dark-Blue_400x.jpg?v=1637018268",
+			"name": "Giant Bike - Bike 0f your Dream",
+			"price": 40000,
+			"color": "Blue",
+			"brand": "Giant",
+			"frame": "ALUXX-Grade Aluminium",
+			"size": "S",
+			"country": "China",
+			"category": "Детские велосипеды ",
+			"descr": "For nearly four decades, Giant bikes has been devoted to bicycles and cycling. At Giant, the two-wheeler is more than just a machine, it’s an integral component of society, and a way to explore the boundaries of your world.",
+			"comment": [
+				["укен", "rishka@gmail.com"],
+				["пролдж", "rishka@gmail.com"],
+				["митьбю", "rishka@gmail.com"],
+				["вапролд", "rishka@gmail.com"]
+			],
+			"id": 4
+		},
+		{
+			"image": "https://www.hendrycycles.com.au/cdn/shop/products/BYK_E540x3i_Matte_Black_White_800x.jpg?v=1616559177",
+			"name": " SIRRUS 1.0",
+			"price": 65000,
+			"color": "Black",
+			"brand": "Specialized",
+			"frame": "Premium Aluminum, Fitness Geometry, ",
+			"size": "M",
+			"country": "USA",
+			"category": "Шоссейные велосипеды",
+			"descr": "Порой кажется, что чтобы все успеть нужно быть сразу в нескольких местах одновременно. Мы понимаем—жизнь сегодня движется довольно быстро, и чтобы вы не чувствовали себя белкой в колесе, мы сделали Sirrus.",
+			"comment": [],
+			"id": 5
+		},
+		{
+			"image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfL6hLUjSDDI5mNaCA_dTOmafWX7lqg9UkPA&usqp=CAU",
+			"name": "Spark 970",
+			"price": 247000,
+			"color": "Black",
+			"brand": "Scott",
+			"frame": "Алюминиевая рама Spark Alloy SL 6011/",
+			"size": "M",
+			"country": "USA",
+			"category": "Шоссейные велосипеды",
+			"descr": "Для нас это совершенно новый идеальный Spark 970.",
+			"comment": [],
+			"id": 6
+		},
+		{
+			"image": "https://www.bikeacademyshop.com/13065-large_default/mtb-scott-scale-rc-world-cup.jpg",
+			"name": "MTB SCOTT SCALE",
+			"price": 400000,
+			"color": "Green",
+			"brand": "SCOTT ",
+			"frame": "Carbon HMX scales",
+			"size": "M",
+			"country": "USA",
+			"category": "Горные велосипеды ",
+			"descr": "The ALL NEW Scale RC World Cup is the perfect blend of stiffness, light weight and 30 years of carbon experience. ",
+			"comment": [],
+			"id": 7
+		},
+		{
+			"image": "https://dqh479dn9vg99.cloudfront.net/wp-content/uploads/sites/9/2023/04/scott-foil-rc-pro-1.jpg",
+			"name": "Scott Bike",
+			"price": 50230,
+			"color": "Black",
+			"brand": "Scott",
+			"frame": "Aluminium+Titan",
+			"size": "M",
+			"country": "USA",
+			"category": "Горные велосипеды ",
+			"descr": "Карбоновая и алюминиевая версии рамы, увеличенные зазоры для покрышек, а также современная (и регулируемая) геометрия – количество и качество технологий действительно поражает.",
+			"comment": [],
+			"id": 8
+		},
+		{
+			"image": "https://pro-bike.ru/data/images/posts/51/38151/scale_910_scott_bike_-3.jpeg",
+			"name": "Bike Scott",
+			"price": 230002,
+			"color": "Gray",
+			"brand": "Scott",
+			"frame": "HMF Carbon Fibre w/Adjustable Head Angle",
+			"size": "SL",
+			"country": "USA",
+			"category": "",
+			"descr": "Вслед за выпуском крайне успешных новых моделей Spark в прошлом году",
+			"comment": [],
+			"id": 9
+		}
+	],
+	"categories": [
+		{
+			"name": "Шоссейные велосипеды",
+			"id": 1
+		},
+		{
+			"name": "Горные велосипеды ",
+			"id": 2
+		},
+		{
+			"name": "Детские велосипеды ",
+			"id": 3
+		}
+	]
 }

@@ -9,7 +9,7 @@ import { ACTIONS } from '../helpers/const';
 const cartContext = createContext();
 export const useCart = () => useContext(cartContext);
 
-//! Сздаем состояние
+//! Создаем состояние
 const INIT_STATE = {
 	cart: JSON.parse(localStorage.getItem('cart')),
 	cartLength: getProductsCountInCart(),
@@ -19,7 +19,6 @@ const reducer = (state = INIT_STATE, action) => {
 	switch (action.type) {
 		case ACTIONS.GET_CART:
 			return { ...state, cart: action.payload };
-
 		default:
 			return state;
 	}
@@ -63,12 +62,7 @@ export const CartContextProvider = ({ children }) => {
 			count: 1,
 			subPrice: product.price,
 		};
-		let productToFindIndex = cart.products.findIndex((elem) => elem.item.id === product.id);
-		if (productToFindIndex === -1) {
-			cart.products.push(newProduct);
-		} else {
-			cart.products[productToFindIndex].count++;
-		}
+		cart.products.push(newProduct);
 		cart.totalPrice = calcTotalPrice(cart.products);
 		localStorage.setItem('cart', JSON.stringify(cart));
 		dispatch({
@@ -84,6 +78,7 @@ export const CartContextProvider = ({ children }) => {
 			return newCart.length > 0 ? true : false;
 		}
 	};
+
 	const changeProductCount = (id, count) => {
 		let cart = getLocalStoroge();
 		cart.products = cart.products.map((elem) => {
@@ -100,7 +95,8 @@ export const CartContextProvider = ({ children }) => {
 			payload: cart,
 		});
 	};
-	// //! DELETE
+
+	//! DELETE
 	const deleteProductFromCart = (id) => {
 		let cart = getLocalStoroge();
 		cart.products = cart.products.filter((elem) => elem.item.id !== id);
@@ -111,6 +107,7 @@ export const CartContextProvider = ({ children }) => {
 			payload: cart,
 		});
 	};
+
 	const values = {
 		getCart,
 		addProductToCart,
