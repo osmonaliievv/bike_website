@@ -1,146 +1,146 @@
 .filter {
-	width: 290px;
-	padding-right: 50px;
-	&__title {
-		display: flex;
-		justify-content: space-between;
-	}
+  width: 290px;
+  padding-right: 50px;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
 
-	&__filter {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding-top: 20px;
-		padding-bottom: 10px;
-		gap: 20px;
-	}
+  &__filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    gap: 20px;
+  }
 }
 .filter-btn {
-	width: 100%;
-	padding: 16px 0;
-	border: 1px solid grey;
-	margin-top: 50px;
+  width: 100%;
+  padding: 16px 0;
+  border: 1px solid grey;
+  margin-top: 50px;
 }
 .filter__input-price {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .filter__input-price label {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 15px;
-	margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
 }
 .filter__input-price input {
-	width: 100px;
-	height: 46px;
-	border: 1px solid rgb(229, 229, 229);
-	border-radius: 10px;
-	padding-left: 5px;
-	font-size: 16px;
+  width: 100px;
+  height: 46px;
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 10px;
+  padding-left: 5px;
+  font-size: 16px;
 }
 .filter__title-brends {
-	margin-top: 50px;
+  margin-top: 50px;
 }
 .check-box {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	clear: rect(0 0 0 0);
-	padding-right: 20px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clear: rect(0 0 0 0);
+  padding-right: 20px;
 }
 .check-box:checked + .check-style {
-	background: url('../../img/catalogPage/icon.svg') no-repeat;
-	object-fit: cover;
+  background: url("../../img/catalogPage/icon.svg") no-repeat;
+  object-fit: cover;
 }
 .check-box:checked:disabled + .check-style {
-	background: none;
-	object-fit: cover;
+  background: none;
+  object-fit: cover;
 }
 .check-style {
-	position: absolute;
-	width: 25px;
-	height: 25px;
-	border: 1px solid rgb(245, 117, 32);
-	margin-right: 50px;
-	margin-right: -20px;
-	border-radius: 5px;
-	cursor: pointer;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid rgb(245, 117, 32);
+  margin-right: 50px;
+  margin-right: -20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .h3 {
-	margin-left: 50px;
-	margin-top: 5px;
-	cursor: pointer;
+  margin-left: 50px;
+  margin-top: 5px;
+  cursor: pointer;
 }
 .range {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .inp-voice {
-	position: relative;
+  position: relative;
 }
 .inp {
-	border: 1px solid rgb(245, 117, 32);
-	width: 100%;
-	padding-left: 10px;
-	margin-bottom: 30px;
-	border-radius: 10px;
-	height: 30px;
+  border: 1px solid rgb(245, 117, 32);
+  width: 100%;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  height: 30px;
 }
 .voice {
-	position: absolute;
-	top: 2px;
-	right: 10px;
-	transition: background 0.5s ease;
-	border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  transition: background 0.5s ease;
+  border-radius: 50%;
 }
 .voice:hover {
-	background: rgb(245, 117, 32);
+  background: rgb(245, 117, 32);
 }
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 // ? стили для input range START
-input[type='range'] {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 100%;
-	height: 5px;
-	background: black;
-	outline: none;
-	opacity: 0.7;
-	margin: 10px 0;
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background: black;
+  outline: none;
+  opacity: 0.7;
+  margin: 10px 0;
 }
 
-input[type='range']:focus {
-	outline: none;
+input[type="range"]:focus {
+  outline: none;
 }
 
-input[type='range']::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 15px; /* Ширина ползунка */
-	height: 15px; /* Высота ползунка */
-	background: black; /* Цвет ползунка */
-	border-radius: 50%;
-	cursor: pointer;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px; /* Ширина ползунка */
+  height: 15px; /* Высота ползунка */
+  background: black; /* Цвет ползунка */
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-input[type='range']::-moz-range-thumb {
-	width: 15px; /* Ширина ползунка */
-	height: 15px; /* Высота ползунка */
-	background: black; /* Цвет ползунка */
-	cursor: pointer;
+input[type="range"]::-moz-range-thumb {
+  width: 15px; /* Ширина ползунка */
+  height: 15px; /* Высота ползунка */
+  background: black; /* Цвет ползунка */
+  cursor: pointer;
 }
 
 // ? стили для input range FINISH
 @media (max-width: 600px) {
-	.filter {
-		padding: 0;
-	}
+  .filter {
+    padding: 0;
+  }
 }
