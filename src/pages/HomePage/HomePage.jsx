@@ -68,7 +68,7 @@ export default function HomePage() {
         <div className="news__container">
           <div className="news__title abs-title">Новинки</div>
           <div className="news__row">
-            {(products || []).slice(0, 4).map((elem) => (
+            {products.slice(0, 4).map((elem) => (
               <div className="catalog__cards" key={elem.id}>
                 <div className="catalog-card">
                   <div className="catalog-img-ibg">
@@ -119,7 +119,7 @@ export default function HomePage() {
       <section className="video">
         <div className="video__top">
           <a
-            href="https://www.youtube.com/watch?v=qz5wbZB5FBA"
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D"
             className="video__frame"
             target="_blank"
             rel="noreferrer"

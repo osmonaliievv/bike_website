@@ -1,123 +1,77 @@
-import React, { createContext, useContext, useReducer } from "react";
-import {
-  calcSubPrice,
-  calcTotalPrice,
-  getLocalStoroge,
-  getProductsCountInCart,
-} from "../helpers/functions";
-import { ACTIONS } from "../helpers/const";
-const cartContext = createContext();
-export const useCart = () => useContext(cartContext);
+import React, { createContext, useContext, useReducer, useEffect } from "react"; // Добавлен useEffect
+import { ACTIONS, API } from "../helpers/const";
+import axios from "axios";
 
-//! Создаем состояние
+const detailContext = createContext();
+export const useDetail = () => useContext(detailContext);
+
 const INIT_STATE = {
-  cart: JSON.parse(localStorage.getItem("cart")),
-  cartLength: getProductsCountInCart(),
+  productById: {},
+  loading: false, // Добавлено состояние загрузки
+  error: null, // Добавлено состояние ошибки
 };
 
-const reducer = (state = INIT_STATE, action) => {
-  switch (action.type) {
-    case ACTIONS.GET_CART:
-      return { ...state, cart: action.payload };
-    default:
-      return state;
-  }
-};
-
-export const CartContextProvider = ({ children }) => {
+export default function DetailContextProvider({ children }) {
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case ACTIONS.GET_PRODUCT_DETAIL:
+        return {
+          ...state,
+          productById: action.payload,
+          loading: false,
+          error: null,
+        };
+      // case ACTIONS.POST_LIKES: // Этот кейс пока не используется, и state не имеет 'likes'.
+      //   return { ...state, likes: action.payload };
+      case ACTIONS.SET_LOADING: // Используем SET_LOADING
+        return { ...state, loading: action.payload };
+      case ACTIONS.SET_ERROR: // Используем SET_ERROR
+        return { ...state, error: action.payload, loading: false };
+      default:
+        return state;
+    }
+  };
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  //!GET
-  const getCart = () => {
-    let cart = getLocalStoroge();
-    if (!cart) {
-      localStorage.setItem(
-        "cart",
-        JSON.stringify({
-          products: [],
-          totalPrice: 0,
-        })
-      );
-      cart = {
-        products: [],
-        totalPrice: 0,
-      };
+  // Вспомогательные функции для управления состоянием загрузки и ошибок
+  const setLoading = (isLoading) =>
+    dispatch({ type: ACTIONS.SET_LOADING, payload: isLoading });
+  const setError = (errMessage) =>
+    dispatch({ type: ACTIONS.SET_ERROR, payload: errMessage });
+  const clearError = () => dispatch({ type: ACTIONS.SET_ERROR, payload: null });
+
+  //! GET PRODUCT BY ID
+  const getProductById = async (id) => {
+    setLoading(true);
+    clearError();
+    try {
+      const { data } = await axios(`${API}/${id}`);
+      dispatch({
+        type: ACTIONS.GET_PRODUCT_DETAIL,
+        payload: data,
+      });
+    } catch (error) {
+      console.error("Ошибка при получении данных продукта:", error);
+      setError(error.message || "Не удалось загрузить данные продукта.");
     }
-    dispatch({
-      type: ACTIONS.GET_CART,
-      payload: cart,
-    });
-  };
-  //!CREATE
-  const addProductToCart = (product) => {
-    let cart = getLocalStoroge();
-    if (!cart) {
-      cart = {
-        products: [],
-        totalPrice: 0,
-      };
-    }
-    let newProduct = {
-      item: product,
-      count: 1,
-      subPrice: product.price,
-    };
-    cart.products.push(newProduct);
-    cart.totalPrice = calcTotalPrice(cart.products);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    dispatch({
-      type: ACTIONS.GET_CART,
-      payload: cart,
-    });
+    // Loading is set to false in reducer or explicitly in catch/finally
   };
 
-  const checkProductInCart = (id) => {
-    let cart = getLocalStoroge();
-    if (cart) {
-      let newCart = cart.products.filter((elem) => elem.item.id === id);
-      return newCart.length > 0 ? true : false;
-    }
-  };
-
-  const changeProductCount = (id, count) => {
-    let cart = getLocalStoroge();
-    cart.products = cart.products.map((elem) => {
-      if (elem.item.id === id) {
-        elem.count = count;
-        elem.subPrice = calcSubPrice(elem);
-      }
-      return elem;
-    });
-    cart.totalPrice = calcTotalPrice(cart.products);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    dispatch({
-      type: ACTIONS.GET_CART,
-      payload: cart,
-    });
-  };
-
-  //! DELETE
-  const deleteProductFromCart = (id) => {
-    let cart = getLocalStoroge();
-    cart.products = cart.products.filter((elem) => elem.item.id !== id);
-    cart.totalPrice = calcTotalPrice(cart.products);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    dispatch({
-      type: ACTIONS.GET_CART,
-      payload: cart,
-    });
-  };
+  // Вызываем getProductById при первой загрузке компонента, если у вас есть ID
+  // Это не делается здесь напрямую, так как ID обычно берется из URL в компоненте, который использует этот контекст.
+  // Например, в ProductDetailsPage:
+  // useEffect(() => {
+  //   if (id) getProductById(id);
+  // }, [id, getProductById]);
 
   const values = {
-    getCart,
-    addProductToCart,
-    cart: state.cart,
-    checkProductInCart,
-    getProductsCountInCart,
-    changeProductCount,
-    deleteProductFromCart,
+    productById: state.productById,
+    loading: state.loading,
+    error: state.error,
+    getProductById,
   };
-  return <cartContext.Provider value={values}>{children}</cartContext.Provider>;
-};
 
-export default CartContextProvider;
+  return (
+    <detailContext.Provider value={values}>{children}</detailContext.Provider>
+  );
+}

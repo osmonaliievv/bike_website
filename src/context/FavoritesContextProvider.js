@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer, useEffect } from "react";
 import { getLocalStorageFavorites } from "../helpers/functions";
 import { ACTIONS } from "../helpers/const";
 
@@ -10,7 +10,7 @@ const favorites = createContext();
 export const useLike = () => useContext(favorites);
 
 const FavoritesContextProvider = ({ children }) => {
-  const reducer = (state = INIT_STATE, action) => {
+  const reducer = (state, action) => {
     switch (action.type) {
       case ACTIONS.GET_LIKE:
         return { ...state, like: action.payload };
@@ -21,37 +21,38 @@ const FavoritesContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  // ! GET
+  // ! GET LIKES from localStorage and set to state
   const getLike = () => {
     let like = getLocalStorageFavorites();
     if (!like) {
-      localStorage.setItem(
-        "like",
-        JSON.stringify({
-          products: [],
-        })
-      );
-      like = {
-        products: [],
-      };
+      like = { products: [] };
+      localStorage.setItem("like", JSON.stringify(like));
     }
     dispatch({
       type: ACTIONS.GET_LIKE,
       payload: like,
     });
   };
-  //!CREATE LIKE
+
+  // ! ADD/REMOVE PRODUCT TO/FROM LIKES (toggle logic)
   const addProductsToLike = (product) => {
     let like = getLocalStorageFavorites();
     if (!like) {
-      like = {
-        products: [],
-      };
+      like = { products: [] };
     }
-    let newProductLike = {
-      item: product,
-    };
-    like.products.push(newProductLike);
+
+    const isProductInLike = like.products.some(
+      (elem) => elem.item.id === product.id
+    );
+
+    if (!isProductInLike) {
+      like.products.push({ item: product });
+    } else {
+      like.products = like.products.filter(
+        (elem) => elem.item.id !== product.id
+      );
+    }
+
     localStorage.setItem("like", JSON.stringify(like));
     dispatch({
       type: ACTIONS.GET_LIKE,
@@ -59,25 +60,33 @@ const FavoritesContextProvider = ({ children }) => {
     });
   };
 
-  // ! CHECK PRODUCT IN FAVOURITES
+  // ! CHECK IF PRODUCT IS IN FAVOURITES
   const checkProductInLike = (id) => {
     let like = getLocalStorageFavorites();
-    if (like) {
-      let newLike = like.products.filter((elem) => elem.item.id == id);
-      return newLike.length > 0 ? true : false;
+    if (like && like.products) {
+      return like.products.some((elem) => elem.item.id === id);
+    }
+    return false;
+  };
+
+  //! DELETE A SPECIFIC PRODUCT FROM LIKES
+  const deleteProductFromLike = (id) => {
+    let like = getLocalStorageFavorites();
+    if (like && like.products) {
+      like.products = like.products.filter((elem) => elem.item.id !== id);
+      localStorage.setItem("like", JSON.stringify(like));
+      dispatch({
+        type: ACTIONS.GET_LIKE,
+        payload: like,
+      });
     }
   };
 
-  //! DELETE
-  const deleteProductFromLike = (id) => {
-    let like = getLocalStorageFavorites();
-    like.products = like.products.filter((elem) => elem.item.id !== id);
-    localStorage.setItem("like", JSON.stringify(like));
-    dispatch({
-      type: ACTIONS.GET_LIKE,
-      payload: like,
-    });
-  };
+  // Вызываем getLike при первой загрузке компонента
+  useEffect(() => {
+    getLike();
+  }, []);
+
   const values = {
     like: state.like,
     deleteProductFromLike,
