@@ -78,7 +78,7 @@ export default function EditPage({ openEditModal, setOpenEditModal }) {
             className="edit-modal__input"
           />
           <input
-            type="text"
+            type="number"
             placeholder="PRICE"
             value={updatePrice}
             onChange={(e) => setUpdatePrice(e.target.value)}

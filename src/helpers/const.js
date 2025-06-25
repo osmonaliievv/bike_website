@@ -1,5 +1,5 @@
-export const API = "http://localhost:8000/products";
-export const API_CATEGORIES = " http://localhost:8000/categories";
+export const API = "/api/products"; // <--- Меняем на относительный путь
+export const API_CATEGORIES = "/api/categories";
 
 export const ACTIONS = {
   GET_PRODUCTS: "GET_PRODUCTS",
