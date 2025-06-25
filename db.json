@@ -1,23 +1,9 @@
 {
   "products": [
     {
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeydXHiYTforpxdFrB-Y1PLw7GehsLwDKDjQ&usqp=CAU",
-      "name": "Quantor Urkraft E-Bike - Pinion",
-      "price": 53000,
-      "color": "black",
-      "brand": "mellas",
-      "frame": "сталь",
-      "size": "L",
-      "country": "KG",
-      "category": "Горные велосипеды ",
-      "descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
-      "comment": [],
-      "id": 1
-    },
-    {
       "image": "https://www.reidcycles.com.au/cdn/shop/products/reid-cycles-australia-express-road-bike-gunmetal-grey-s-333.jpg?v=1627437366&width=1946",
       "name": "Express Road Bike | Road Bikes Online",
-      "price": 150000,
+      "price": "1500",
       "color": "black",
       "brand": "reid",
       "frame": "сталь",
@@ -33,12 +19,20 @@
         [
           "Салам алейкум",
           "adil@gmail.com"
+        ],
+        [
+          "hnbtnyun",
+          "sanjar123@gmail.com"
+        ],
+        [
+          "kgfmbkglnbkgfglkngklfklkrknt5n5k46",
+          "sanjar123@gmail.com"
         ]
       ],
       "id": 2
     },
     {
-      "image": "https://www.hendrycycles.com.au/cdn/shop/products/Marlin4_22_2_Black_2048x.jpg?v=1629950485",
+      "image": "https://www.productsafety.gov.au/system/files/styles/wide/private/Speed%20Bicycle.gif?itok=tW3S7t1e",
       "name": "Trek Bicycle Corporation ",
       "price": 70000,
       "color": "Black",
@@ -48,11 +42,28 @@
       "country": "USA",
       "category": "Шоссейные велосипеды",
       "descr": "Trek Bicycle Corporation - крупный американский производитель велосипедов и велосипедных товаров. Бренд был основан в 1976 году Джоном Берком.",
-      "comment": [],
+      "comment": [
+        [
+          "jjkg",
+          "akai@gmail.com"
+        ],
+        [
+          "nmvhjhj",
+          "akai@gmail.com"
+        ],
+        [
+          "lkjkbl",
+          "akai@gmail.com"
+        ],
+        [
+          "dfdgfdgfd",
+          "adilnur@gmail.com"
+        ]
+      ],
       "id": 3
     },
     {
-      "image": "https://www.hendrycycles.com.au/cdn/shop/products/MY21-Adore-20_Color-A-Dark-Blue_400x.jpg?v=1637018268",
+      "image": "https://www.francesconibike.com/cdn/shop/files/8cdf4fe7-eade-45b2-9756-76cd67c45575_809a45c3-9bac-44f2-a4bb-32155ce78b89.jpg?v=1734713996",
       "name": "Giant Bike - Bike 0f your Dream",
       "price": 40000,
       "color": "Blue",
@@ -83,7 +94,7 @@
       "id": 4
     },
     {
-      "image": "https://www.hendrycycles.com.au/cdn/shop/products/BYK_E540x3i_Matte_Black_White_800x.jpg?v=1616559177",
+      "image": "https://oberson.com/cdn/shop/files/media_0cbd405b-41fa-45c6-abef-ee176a749c32.jpg?v=1734797442&width=1200",
       "name": " SIRRUS 1.0",
       "price": 65000,
       "color": "Black",
@@ -97,9 +108,9 @@
       "id": 5
     },
     {
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfL6hLUjSDDI5mNaCA_dTOmafWX7lqg9UkPA&usqp=CAU",
+      "image": "https://bikespalmbeach.com/wp-content/uploads/2021/11/scott-spark-rc-comp-blue.jpg",
       "name": "Spark 970",
-      "price": 247000,
+      "price": "2000",
       "color": "Black",
       "brand": "Scott",
       "frame": "Алюминиевая рама Spark Alloy SL 6011/",
@@ -107,11 +118,20 @@
       "country": "USA",
       "category": "Шоссейные велосипеды",
       "descr": "Для нас это совершенно новый идеальный Spark 970.",
-      "comment": [],
+      "comment": [
+        [
+          "авпвапвап",
+          "osmonaliievv@gmail.com"
+        ],
+        [
+          "авпвапарар",
+          "osmonaliievv@gmail.com"
+        ]
+      ],
       "id": 6
     },
     {
-      "image": "https://www.bikeacademyshop.com/13065-large_default/mtb-scott-scale-rc-world-cup.jpg",
+      "image": "https://asset.scott-sports.com/fit-in/2000x2000/290/290740_1915551_3.png?signature=2a3372d76b75403c938a3b010ec6f2b9aef9ab331aecbe39aeca4543c9fe30ea",
       "name": "MTB SCOTT SCALE",
       "price": 400000,
       "color": "Green",
@@ -178,6 +198,43 @@
         ]
       ],
       "id": 10
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRSY06BonTMmUiAB252ba2LsVYKtxJE97bjg&s",
+      "name": "sardor",
+      "price": 17000,
+      "color": "ЧЕРНЫЙ",
+      "brand": "kinetic",
+      "frame": "aliman ",
+      "size": "xl",
+      "country": "Киргизия",
+      "category": "велосипед",
+      "descr": "for work",
+      "comment": [],
+      "id": 11
+    },
+    {
+      "image": "https://veloplaneta.ua/upload/iblock/15b/4b401388-116f-11e4-abd9-e2824f2ecf4f_b758bf5c-031b-11e6-a8c7-ec1ae86055cc.jpeg",
+      "name": "Суймонкулдун велиги ",
+      "price": 1e+25,
+      "color": "Нежно пурпурный",
+      "brand": "й",
+      "frame": "BRILLIANt",
+      "size": "XXXXXXXL",
+      "country": "Босня и Герцоговина",
+      "category": "Трехколесные",
+      "descr": "Кот тешкич велиик",
+      "comment": [
+        [
+          "Самый лучший велик на моей жопе",
+          "adilnur@gmail.com"
+        ],
+        [
+          "Ома кот, Аскарали Кот",
+          "charoniv87@gmail.com"
+        ]
+      ],
+      "id": 12
     }
   ],
   "categories": [
@@ -196,6 +253,14 @@
     {
       "name": "Трехколесные",
       "id": 4
+    },
+    {
+      "name": "веорсипед",
+      "id": 5
+    },
+    {
+      "name": "велосипед",
+      "id": 6
     }
   ]
 }

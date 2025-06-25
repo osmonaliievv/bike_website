@@ -13,4 +13,5 @@ export const ACTIONS = {
 export const ACTIONS_USER = {
   CHECK_USER: "CHECK_USER",
 };
-export const ADMIN = "admin@gmail.com";
+export const ADMIN = "adilnur@gmail.com";
+//! пароль на админку 123456789

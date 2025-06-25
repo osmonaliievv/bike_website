@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Header.scss";
 import icon from "../../img/icons/icon.svg";
 import authIcon from "../../img/imgMainPhoto/icons8-пользователь-мужчина-в-кружке-48 (1).png";
 import favourites from "../../img/icons/heart.svg";
 import cart from "../../img/icons/corzina.svg";
-import burgerNenu from "../../img/icons/burger-menu.svg";
+import burgerMenu from "../../img/icons/burger-menu.svg";
 import closeMenuImg from "../../img/mainPage/Frame 433.svg";
 
 import { NavLink } from "react-router-dom";
@@ -15,6 +15,25 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const { user, logOut } = useAuthContext();
+  const menuRef = useRef(null); // Ссылка на модальное окно
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      // Проверяем, если клик был вне модального окна
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setAnchorEl(null);
+      }
+    };
+
+    // Добавляем обработчик на документ
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      // Удаляем обработчик при размонтировании компонента
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   const openMenu = () => {
     setOpen(true);
   };
@@ -23,27 +42,13 @@ export default function Header() {
     setOpen(false);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   const handleLogOut = () => {
     logOut();
-    handleClose();
+    setAnchorEl(null);
   };
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuItemClick = () => {
-    handleClose();
-  };
-
-  const handleOutsideClick = (event) => {
-    if (anchorEl && !anchorEl.contains(event.target)) {
-      handleClose();
-    }
   };
 
   return (
@@ -57,16 +62,16 @@ export default function Header() {
         <div className="app-bar">
           <div
             className={`menu ${anchorEl ? "open" : ""}`}
-            onClick={handleOutsideClick}
+            ref={menuRef} // Привязываем ссылку к модальному окну
           >
             <ul>
               <li>
-                <NavLink to={"/auth"} onClick={handleMenuItemClick}>
+                <NavLink to={"/auth"} onClick={() => setAnchorEl(null)}>
                   Register
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/login"} onClick={handleMenuItemClick}>
+                <NavLink to={"/login"} onClick={() => setAnchorEl(null)}>
                   Log In
                 </NavLink>
               </li>
@@ -82,9 +87,9 @@ export default function Header() {
             <li className="menu-header__item">
               <NavLink to={"/catalog"}>Каталог</NavLink>
             </li>
-            {user && user.email == ADMIN ? (
+            {user && user.email === ADMIN ? (
               <li className="menu-header__item">
-                <NavLink to={"/admin"} onClick={handleMenuItemClick}>
+                <NavLink to={"/admin"} onClick={() => setAnchorEl(null)}>
                   Админка
                 </NavLink>
               </li>
@@ -94,15 +99,11 @@ export default function Header() {
         <div className="header__icons">
           <button className="avatar-button" onClick={handleMenu}>
             <span className="account-circle-icon">
-              <span className="account-circle-icon">
-                {user && user.email ? (
-                  <p>{user.email.slice(0, 1)}</p>
-                ) : (
-                  <>
-                    <img src={authIcon} alt="ICON" />
-                  </>
-                )}
-              </span>
+              {user && user.email ? (
+                <p>{user.email.slice(0, 1)}</p>
+              ) : (
+                <img src={authIcon} alt="ICON" />
+              )}
             </span>
           </button>
           <NavLink to={"/favourites"}>
@@ -112,7 +113,7 @@ export default function Header() {
             <img src={cart} alt="cart" />
           </NavLink>
           <button className="header__button" onClick={openMenu}>
-            <img src={burgerNenu} alt="burger" />
+            <img src={burgerMenu} alt="burger" />
           </button>
         </div>
       </div>

@@ -10,8 +10,8 @@ export const calcTotalPrice = (products) => {
 
 // функция для подсчета всех товаров в корзине
 export const getProductsCountInCart = () => {
-  let cart = getLocalStoroge();
-  return cart ? cart.products.length : 0;
+  // let cart = getLocalStoroge();
+  // return cart ? cart.products.length : 0;
 };
 
 //функция для подсчета стоимости за одну позицию
