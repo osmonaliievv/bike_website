@@ -68,7 +68,7 @@ export default function HomePage() {
         <div className="news__container">
           <div className="news__title abs-title">Новинки</div>
           <div className="news__row">
-            {products.slice(0, 4).map((elem) => (
+            {(products || []).slice(0, 4).map((elem) => (
               <div className="catalog__cards" key={elem.id}>
                 <div className="catalog-card">
                   <div className="catalog-img-ibg">
