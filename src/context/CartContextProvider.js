@@ -54,10 +54,8 @@ export default function DetailContextProvider({ children }) {
       console.error("Ошибка при получении данных продукта:", error);
       setError(error.message || "Не удалось загрузить данные продукта.");
     }
-    // Loading is set to false in reducer or explicitly in catch/finally
   };
 
-  // Вызываем getProductById при первой загрузке компонента, если у вас есть ID
   // Это не делается здесь напрямую, так как ID обычно берется из URL в компоненте, который использует этот контекст.
   // Например, в ProductDetailsPage:
   // useEffect(() => {
